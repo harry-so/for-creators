@@ -63,7 +63,7 @@
                                     <div class="col-12 col-md-12">
                                         <p class="w-text">Upload Item File</p>
                                         <div class="group-file">
-                                            <p class="g-text">PNG, GIF, WEBP, MP4 or MP3. Max 100mb</p>
+                                            <p class="g-text">PNG, JPG, JPEG</p>
                                             <div class="new_Btn more-btn">Upload File</div><br>
                                             <input type="file" name="img_1" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
                                         </div>
