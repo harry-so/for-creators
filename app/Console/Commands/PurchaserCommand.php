@@ -3,8 +3,7 @@
 namespace App\Console\Commands;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Mail; 
-use App\Mail\LostMail;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\SoldMail;
 use App\Mail\UnsoldMail;
 use App\Mail\WonMail;
