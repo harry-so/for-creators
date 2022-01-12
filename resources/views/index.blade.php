@@ -7,6 +7,5 @@
   @include('partials.home.feature')
   @include('partials.home.seller')
   @include('partials.home.collection')
-  @include('partials.home.auctions')
 
 @endsection

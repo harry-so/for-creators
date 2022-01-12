@@ -210,7 +210,7 @@
     color:white;
 }
 .time {
-    font-size: 11px;
+    font-size: 10px;
     margin: .2rem;
     background: #290571;
     color:white;
@@ -223,7 +223,7 @@
 
 #day,#hour,#min,#sec {
   font-size: 2rem;
-  margin-right: .5rem;
+  /* margin-right:; */
 }
 </style>
 </section>
