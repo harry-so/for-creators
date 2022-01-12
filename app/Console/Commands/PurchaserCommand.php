@@ -171,7 +171,7 @@ class PurchaserCommand extends Command
                             'bid_count' => 0
                         ];
                         $email = $item->user->email;
-                        
+            
                         Mail::to($email)->send(new UnsoldMail($details));
 
                     };

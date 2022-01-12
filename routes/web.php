@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TransactionsController;
+use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\HomeController;
@@ -30,16 +31,16 @@ use App\Purchaser;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
 // トップページ周り
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/contact-us',[HomeController::class, 'contact'])->name("contact-us");
-Route::post('/inquiry',[HomeController::class, 'inquiry']);
+Route::get('/', [GeneralController::class, 'index']);
+Route::get('/contact-us',[GeneralController::class, 'contact'])->name("contact-us");
+Route::post('/inquiry',[GeneralController::class, 'inquiry']);
 
 
 // Route::get('/', 'ItemsController@index');
