@@ -7,18 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Mail extends Mailable
+class SoldMail extends Mailable
 {
     use Queueable, SerializesModels;
+    public $details;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($mail_info)
+    public function __construct($details)
     {
-        $this->mail_info = $mail_info;
+        $this->details = $details;
     }
 
     /**
@@ -28,8 +29,8 @@ class Mail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.test')
-                    ->subject('メールテスト');
-                    
+        return $this
+        ->view('emails.for_sold_creator')
+        ->subject('For Creators: 出品結果のお知らせ');
     }
 }

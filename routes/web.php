@@ -40,9 +40,11 @@ require __DIR__.'/auth.php';
 Route::get('/', function(){
     $items = Item::orderBy('created_at', 'desc')->paginate(12);
     $top_sales = Purchaser::orderby('final_price', 'desc')->limit(12)->get();
+    // $onsales = Item::where(strtotime("endtime"), ">=", date('Y-m-d H:i:s'))->paginate(4);
         return view('index', [
             'items' => $items,
             'top_sales' => $top_sales,
+            // 'onsales' => $onsales,
             // 'fav_items' =>$fav_items
         ]);
 });
@@ -103,14 +105,14 @@ Route::get("/save/{id}", [StripeController::class, 'save_session']);
 // Route::post("/stripe", [StripeController::class, 'post'])->name('stripe.post');
 // Route::post("/capture", [StripeController::class, 'capture'])->name('capture');
 
+Route::get('/countdown', function(){
+    $p = Item::where("id", 5)->first();
+    $p1 = Item::where("id", 6)->first();
+    $time1 = $p->endtime;
+    $time2 = $p1->endtime;
 
-Route::post('/purchase', function (Request $request) {
-    $request->user()->charge(
-        100, $request->paymentMethodId
-    );
-
-    return redirect('/dashboard');
-
-})->middleware(['auth'])->name('purchase.post');
-
-Route::get('checkout',[StripeController::class, 'checkout'])->name('checkout');
+    return view ("countdown", [
+        "time1" => $time1,
+        "time2" => $time2,
+    ]);
+});

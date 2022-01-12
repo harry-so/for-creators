@@ -3,11 +3,16 @@
 namespace App\Console\Commands;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Mail; 
+use App\Mail\LostMail;
+use App\Mail\SoldMail;
+use App\Mail\UnsoldMail;
+use App\Mail\WonMail;
 use App\Item;
 use App\Bid;
 use App\User;
 use App\Purchaser;
-use App\Mail;
+
 
 class PurchaserCommand extends Command
 {
@@ -70,6 +75,17 @@ class PurchaserCommand extends Command
                             $item->status = 7;
                             Log::info("最小価格より少ないため不成立");
                             $item->save();
+                            // 不成立のメールを送る
+                            $bid_count = Bid::where("item_id",$itemid)->get()->count();
+                            $details = [
+                                'item_name' => $item->name,
+                                'bid_count' => $bid_count
+                            ];
+                            $email = $item->user->email;
+                            
+                            Mail::to($email)->send(new UnsoldMail($details));
+
+
                         }else{
                             // Bidの最高値 >= Item Min_price -> Item Statusを6に更新
                             $item->status = 6;
@@ -94,19 +110,18 @@ class PurchaserCommand extends Command
                                 $final_price = $second_bidder->max_price;
                                 
                             }else {
+                                //最低価格以上のBidderが集まらなかった
                                 $bid_count = Bid::where("item_id",$itemid)->get()->count();
+                                
+                                $details = [
+                                    'item_name' => $item->item_name,
+                                    'bid_count' => $bid_count
+                                ];
                                 $email = $item->user->email;
-                                // Mail::send(['text' => 'emails.unsold_creator'], [
-                                //     'item_name'=>$item->item_name,
-                                //     'bid_count'=>$bid_count,
-                                // ]
-                                // , function($message) use($email) {
-                            
-                                //     $message
-                                //         ->from('info@for-creators.jp')
-                                //         ->to($email)
-                                //         ->subject("[For Creators] 募集期間終了通知");
-                                // });
+                                
+                                Mail::to($email)->send(new UnsoldMail($details));
+
+                                };
                             };
                             // item_purchaser DBに登録
                             
@@ -119,57 +134,47 @@ class PurchaserCommand extends Command
                             Log::info("購買者のDB登録完了");
                             Log::info("===============");
 
-                            $c_email = $item->user->email;
-                            $p_email = $high_bid->user->email;
-                            // 出品者と購入者にメールの送信
-                            // Mail::send(['text' => 'emails.for_sold_creator'], [
-                            //     'item_name'=>$item->item_name,
-                            //     'min_price'=>$item->min_price,
-                            //     'final_price'=>$final_price,
-                            //     'user_name'=>$item->user->name,
-                            // ]
-                            // , function($message) use($c_email) {
-                        
-                            //     $message
-                            //         ->from('info@for-creators.jp')
-                            //         ->to($c_email)
-                            //         ->subject("[For Creators] 取引完了通知");
-                            // });
+                            $winner = User::where('id',$purchaser_id)->first();
+                            // 売れたクリエイターへのメール
+                            $details = [
+                                'item_name' => $item->item_name,
+                                'user_name' => $winner->name,
+                                'min_price' => $item->min_price,
+                                'final_price' => $final_price,
+                            ];
+                            $email = $item->user->email;
+                            
+                            Mail::to($email)->send(new SoldMail($details));
 
-                            // Mail::send(['text' => 'emails.for_winner'], [
-                            //     'item_name'=>$item->item_name,
-                            //     'user_name'=>$item->user->name,
-                            //     'max_price'=>$high_bid->max_price,
-                            //     'final_price'=>$final_price,
-                            // ]
-                            // , function($message) use($p_email) {
-                        
-                            //     $message
-                            //         ->from('info@for-creators.jp')
-                            //         ->to($p_email)
-                            //         ->subject("[For Creators] 取引完了通知");
-                            // });
+                            // 購入ができたクリエイターへメール
+                            $details = [
+                                'item_name' => $item->item_name,
+                                'creator_name' => $winner->name,
+                                'max_price' => $high_bid->max_price,
+                                'final_price' => $final_price,
+                            ];
+                            $email = $item->user->email;
+                            
+                            Mail::to($email)->send(new WonMail($details));
 
-                        };
+                            // 選ばれなかった人（Losers）へのメール→QUEUEとJOBの実装を待つ
+
+                    
                     } else {
-                        $c_email = $item->user->email;
 
                         Log::info("bidなし");
                         // Bidがない -> Item Statusを7に変更
                         $item->status = 7;
                         $item->save();
 
-                        // Mail::send(['text' => 'emails.unsold_creator'], [
-                        //     'item_name'=>$item->item_name,
-                        //     'bid_count'=>0
-                        // ]
-                        // , function($message) use($c_email) {
-                    
-                        //     $message
-                        //         ->from('info@for-creators.jp')
-                        //         ->to($c_email)
-                        //         ->subject("[For Creators] 募集期間終了通知");
-                        // });
+                        $details = [
+                            'item_name' => $item->item_name,
+                            'bid_count' => 0
+                        ];
+                        $email = $item->user->email;
+                        
+                        Mail::to($email)->send(new UnsoldMail($details));
+
                     };
                 };
             };

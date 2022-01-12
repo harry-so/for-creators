@@ -58,8 +58,13 @@
 }
 .chat-container {
     display:flex;
-    justify-content:flex-start;
+    justify-content:flex-startcen;
     padding: 0 0 0 10vw;
+    margin: 5px 0 5px 0;
+}
+.chat-input {
+    display:flex;
+    justify-content:center;
     margin: 5px 0 5px 0;
 }
 
@@ -109,11 +114,11 @@
             @endforeach
 
             <li class="text-center">
-            <div class="chat-container">
-                <form action="{{ url('/chat') }}" method="POST">
+            <div class="chat-input">
+                <form action="{{ url('/chat') }}" method="POST" style="margin:auto">
                 @csrf
-                <div class="col-12 col-md-12" style = "width:60vw">    
-                    <div class="group">
+                <div class="" style = "width:60vw">    
+                    <div class="group" >
                         <input type="textbox" name="message" class="form-control" placeholder="メッセージを送ろう">
                         <input type="hidden" name="user_id" value="{{Auth::id()}}" > 
                         <input type="hidden" name="purchaser_id" value="{{ $purchase -> id}}">
@@ -121,6 +126,9 @@
                             <span class="bar"></span>
                         <div class="col-12 text-center">
                         <button type="submit" class="more-btn mb-15" style="margin:15px 0 0 0">Send</button>
+                        @if (session('error')) 
+                            <div class="alert alert-danger">{{ session('error') }}</div>
+                        @endif
                     </div>
                 </div>
                 </form>
