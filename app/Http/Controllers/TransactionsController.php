@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BidCompletedMail;
+
 
 class TransactionsController extends Controller
 {
@@ -70,7 +73,22 @@ class TransactionsController extends Controller
         $bids->bid_time = now();
         $bids->save();
 
+        $item = Item::find($request->item_id);
+        
+        // 購入ができたクリエイターへメール
+        $details = [
+            'item_name' => $item->item_name,
+            'creator_name' => $item->user->name,
+            'max_price' => $request->max_price,
+            'message' => $request->message,
+        ]
+        
+        Mail::to($item->user->email)->send(new BidCompletedMail($details));
 
+        ;
+        
+        
+        
         return redirect('/item/'.$request->item_id);
         
     }
@@ -153,6 +171,7 @@ class TransactionsController extends Controller
         $bid->item_id = $request->item_id;
         $bid->user_id = $request->user_id;
         $bid->save();
+
         
         return redirect('/item/'.$request->item_id);
     }
