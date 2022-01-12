@@ -36,18 +36,12 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+// トップページ周り
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/contact-us',[HomeController::class, 'contact'])->name("contact-us");
+Route::post('/inquiry',[HomeController::class, 'inquiry']);
 
-Route::get('/', function(){
-    $items = Item::orderBy('created_at', 'desc')->paginate(12);
-    $top_sales = Purchaser::orderby('final_price', 'desc')->limit(12)->get();
-    // $onsales = Item::where(strtotime("endtime"), ">=", date('Y-m-d H:i:s'))->paginate(4);
-        return view('index', [
-            'items' => $items,
-            'top_sales' => $top_sales,
-            // 'onsales' => $onsales,
-            // 'fav_items' =>$fav_items
-        ]);
-});
+
 // Route::get('/', 'ItemsController@index');
 Route::get('/discover', [ItemsController::class,'discover'])->name('discover');
 Route::get('/auctions',[ItemsController::class,'auction'])->name('auction');
@@ -80,19 +74,7 @@ Route::post('/user/update', [UsersController::class,'update']);
 Route::post('/chat', [TransactionsController::class,'chat_send']);
 
 
-//メール送信フォームを表示
-// Route::get('/mail', [MailController::class,'index']);
-Route::post('/mail', [MailController::class,'send']);
 
-
-// //メール送信処理
-// Route::post('/mail/send', [MailController::class,'send']);
-
-
-// コンタクト
-Route::get('/contact-us', function(){
-    return view('contact-us');
-});
 
 Route::get('/activity', function(){
         return view('activity');
@@ -104,15 +86,3 @@ Route::get("/stripe", [StripeController::class, 'get']);
 Route::get("/save/{id}", [StripeController::class, 'save_session']);
 // Route::post("/stripe", [StripeController::class, 'post'])->name('stripe.post');
 // Route::post("/capture", [StripeController::class, 'capture'])->name('capture');
-
-Route::get('/countdown', function(){
-    $p = Item::where("id", 5)->first();
-    $p1 = Item::where("id", 6)->first();
-    $time1 = $p->endtime;
-    $time2 = $p1->endtime;
-
-    return view ("countdown", [
-        "time1" => $time1,
-        "time2" => $time2,
-    ]);
-});

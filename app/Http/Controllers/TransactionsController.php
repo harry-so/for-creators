@@ -81,13 +81,9 @@ class TransactionsController extends Controller
             'creator_name' => $item->user->name,
             'max_price' => $request->max_price,
             'message' => $request->message,
-        ]
+        ];
         
         Mail::to($item->user->email)->send(new BidCompletedMail($details));
-
-        ;
-        
-        
         
         return redirect('/item/'.$request->item_id);
         
