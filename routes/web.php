@@ -40,9 +40,11 @@ require __DIR__.'/auth.php';
 Route::get('/', function(){
     $items = Item::orderBy('created_at', 'desc')->paginate(12);
     $top_sales = Purchaser::orderby('final_price', 'desc')->limit(12)->get();
+    // $onsales = Item::where(strtotime("endtime"), ">=", date('Y-m-d H:i:s'))->paginate(4);
         return view('index', [
             'items' => $items,
             'top_sales' => $top_sales,
+            // 'onsales' => $onsales,
             // 'fav_items' =>$fav_items
         ]);
 });

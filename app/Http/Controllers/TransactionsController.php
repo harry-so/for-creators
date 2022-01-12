@@ -183,8 +183,9 @@ class TransactionsController extends Controller
         
         //バリデーション:エラー 
         if ($validator->fails()) {
-            return redirect('transaction')
+            return back()
                 ->withInput()
+                ->with('error', "入力エラーがあります")
                 ->withErrors($validator);
         }
         
