@@ -19,7 +19,7 @@
                             <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt="" class="pricing-img"></a>
                             </div>
                             <div class="owner-info">
-                                <img src="users/{{$item->user->prof_img}}" width="40" alt="" class="prof_img">
+                                <img src="users/{{$item->user->prof_img}}" alt="" class="prof_img">
                                 <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
                             </div>
                                 <div>

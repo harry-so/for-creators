@@ -7,29 +7,20 @@
                    <div class="service_single_content collection-item">
                         <!-- Icon -->
                         <div class="collection_icon">
-                            <img src="img/art-work/profile-header.jpg" class="center-block" alt="">
+                            <img src="{{asset('img/art-work/profile-header.jpg')}}" class="center-block" alt="">
                         </div>
                         <span class="aut-info">
-                            <img src="img/authors/2.png" width="50" alt="">
+                            <img src="/users/{{$item->user->prof_img}}" width="65" alt="">
                         </span>
                         <div class="collection_info text-center">
                             <h6>{{$item->user->name}}</h6>
-                            <p class="w-text mr-5p">Creative NFTs Designer <img src="img/art-work/fire.png" width="20" alt=""></p>
+                            <p class="w-text mr-5p"> {{$item->user->title}}<img src="img/art-work/fire.png" width="20" alt=""></p>
                             <p class="mt-15">{{Auth::user()->user_desc}}</p>
 
-                            <div class="search-widget-area mt-15">
-                                <form action="#" method="post">
-                                    <input type="text" name="wallet" id="wallet" value="Xjo03s-osi6732...">
-                                    <button class="btn"><i class="fa fa-copy"></i></button>
-                                </form>
-                            </div>
-
                             <ul class="social-links mt-30 mb-30">
-                              <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                              <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                              <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                              <li><a href="#"><span class="fa fa-instagram"></span></a></li>
+                                <li><a href="{{Auth::user()->twitter}}"><span class="fa fa-twitter"></span></a></li>
+                                <li><a href="{{Auth::user()->instagram}}"><span class="fa fa-instagram"></span></a></li>
+                                <li><a href="{{Auth::user()->website}}"><span class="fa fa-laptop"></span></a></li>
                            </ul>
                         </div>
 
@@ -39,9 +30,9 @@
                     <div class="creator-sec dd-bg">
                         <div class="who-we-contant">
                             <div class="dream-dots text-left fadeInUp" data-wow-delay="0.2s">
-                                <span class="gradient-text ">Create New Item</span>
+                                <span class="gradient-text ">Edit Your Item</span>
                             </div>
-                            <h4 class="fadeInUp" data-wow-delay="0.3s">Create Item</h4>
+                            <h4 class="fadeInUp" data-wow-delay="0.3s">Edit Item : 編集</h4>
                         </div>
                         <div class="contact_form">
                             <form action="{{ url('item/update') }}" method="post" id="main_contact_form" enctype='multipart/form-data'>
@@ -52,12 +43,13 @@
                                     </div>
 
                                     <div class="col-12 col-md-12">
-                                        <p class="w-text">Upload Item File</p>
+                                        <p class="w-text">Upload Item File : あなたの商品を一番よく表している写真をアップロードしてください</p>
                                         <div class="group-file">
-                                            <p class="g-text">PNG, GIF, WEBP, MP4 or MP3. Max 100mb</p>
-                                            <img src="/items/{{$item->img_1}}">
-                                            <div class="new_Btn more-btn">Upload File</div><br>
-                                            <input type="file" name="img_1" class="form-control" accept='image/' value = "{{$item->img_1}}" enctype="multipart/form-data" multiple="multiple" autofocus>
+                                            <p class="g-text">PNG, JPG, JPEG</p>
+                                            <img id="uploaded" style="margin-bottom:10px">
+                                            <label for="upload-btn" class="new_Btn more-btn" style="display:inline-block;">Upload File<br>
+                                            <input type="file" name="img_1" id="upload-btn" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12">
@@ -65,10 +57,10 @@
                                             <input type="text" name="item_name" id="name" required value="{{$item->item_name}}">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>Item name</label>
+                                            <label>Item name : あなたの商品を一番よく表す名前をつけましょう</label>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-12">
+                                    <!-- <div class="col-12 col-md-12">
                                         <div class="mb-15">
                                             <p>Choose item Category</p>
                                             <<div class="filers-list ">
@@ -93,13 +85,13 @@
                                                 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-12">
                                         <div class="group">
                                             <textarea name="item_desc" id="Description" required>{{$item->item_desc}}</textarea>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>Item Description</label>
+                                            <label>Item Description : 詳しく商品について熱く語ってください！</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12">
@@ -107,7 +99,7 @@
                                             <input type="text" name="min_price" id="Price" required value="{{$item->min_price}}">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>Min Price you can't sell</label>
+                                            <label>Min Price you can't sell : これ以下では売りたくないという最低価格を入力してください（他の方には公開されません。）</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -115,14 +107,19 @@
                                             <!-- <input type="text" name="duration" id="Royalties" required> -->
                                             <!-- <span class="highlight"></span> -->
                                             <!-- <span class="bar"></span> -->
-                                            <label>Selling period</label>
-                                            <select name="duration" required class="highlight bar" style="background-color:red" value="{{$item->duration}}">
-                                                <option value="1">1時間</option>
-                                                <option value="2">1日 (24時間)</option>
-                                                <option value="3">3日間</option>
-                                                <option value="4">1週間</option>
-                                                <option value="5">3分間</option>
-                                            </select>
+                                            <div class="cp_ipselect">
+                                                <select name="duration" required class="cp_sl06">
+                                                    <option disabled>Selling Period: 商品の募集期間を選んでください</option>
+                                                    <option value="1">1時間</option>
+                                                    <option value="2">1日 (24時間)</option>
+                                                    <option value="3">3日間</option>
+                                                    <option value="4">1週間</option>
+                                                    <option value="5">3分間</option>
+                                                </select>
+                                                <span class="cp_sl06_highlight"></span>
+                                                <span class="cp_sl06_selectbar"></span>
+                                                <label class="cp_sl06_selectlabel">Selling Period: 商品の募集期間を選んでください</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <input type="hidden" name="id" value="{{$item->id}}" /> <!--/ id 値を送信 -->
@@ -134,7 +131,11 @@
                             <hr>
                             <div class="text-center">
                                 <p class="w-text mr-5p">アイテムを削除したい場合は... </p>
-                                <a href="{{ url('/itemdelete/'.$item->id) }}" class="open-popup-link more-btn col-6">Delete</a>
+                                <form action="{{ url('/itemdelete/'.$item->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="more-btn mb-15">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>

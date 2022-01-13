@@ -7,10 +7,10 @@
                    <div class="service_single_content collection-item">
                         <!-- Icon -->
                         <div class="collection_icon">
-                            <img src="img/art-work/profile-header.jpg" class="center-block" alt="">
+                            <img src="{{asset('img/art-work/profile-header.jpg')}}" class="center-block" alt="">
                         </div>
                         <span class="aut-info">
-                            <img src="users/{{Auth::user()->prof_img}}" width="50" alt="">
+                            <img src="/users/{{Auth::user()->prof_img}}" width="65" alt="">
                         </span>
                         <div class="collection_info text-center">
                             <h6>{{Auth::user()->name}}</h6>
@@ -50,7 +50,7 @@
                             <div class="dream-dots text-left fadeInUp" data-wow-delay="0.2s">
                                 <span class="gradient-text ">Create New Item</span>
                             </div>
-                            <h4 class="fadeInUp" data-wow-delay="0.3s">Create Item</h4>
+                            <h4 class="fadeInUp" data-wow-delay="0.3s">Create Item : 出品しよう！</h4>
                         </div>
                         <div class="contact_form">
                             <form action="{{ url('list') }}" method="post" id="main_contact_form" enctype='multipart/form-data'>
@@ -61,11 +61,17 @@
                                     </div>
 
                                     <div class="col-12 col-md-12">
-                                        <p class="w-text">Upload Item File</p>
+                                        <p class="w-text">Upload Item File : あなたの商品を一番よく表している写真をアップロードしてください</p>
                                         <div class="group-file">
                                             <p class="g-text">PNG, JPG, JPEG</p>
-                                            <div class="new_Btn more-btn">Upload File</div><br>
-                                            <input type="file" name="img_1" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
+                                            <!-- <div class="new_Btn more-btn">Upload File</div><br>
+                                            <input type="file" name="img_1" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus> -->
+                                            <!-- 元々 -->
+                                            <img id="uploaded" style="margin-bottom:10px">
+                                            <label for="upload-btn" class="new_Btn more-btn" style="display:inline-block;">Upload File<br>
+                                            <input type="file" name="img_1" id="upload-btn" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
+                                            </label>
+
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12">
@@ -73,10 +79,10 @@
                                             <input type="text" name="item_name" id="name" required>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>Item name</label>
+                                            <label>Item name : あなたの商品を一番よく表す名前をつけましょう</label>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-12">
+                                    <!-- <div class="col-12 col-md-12">
                                         <div class="mb-15">
                                             <p>Choose item Category</p>
                                             <div class="filers-list ">
@@ -101,13 +107,13 @@
                                                 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-12">
                                         <div class="group">
                                             <textarea name="item_desc" id="Description" required></textarea>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>Item Description</label>
+                                            <label>Item Description : 詳しく商品について熱く語ってください！</label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12">
@@ -115,7 +121,8 @@
                                             <input type="number" name="min_price" id="Price" required>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>Min Price you wanna sell</label>
+                                            <label>Min Price you wanna sell : これ以下では売りたくないという最低価格を入力してください（他の方には公開されません。）</label>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -123,14 +130,20 @@
                                             <!-- <input type="text" name="duration" id="Royalties" required> -->
                                             <!-- <span class="highlight"></span> -->
                                             <!-- <span class="bar"></span> -->
-                                            <label>Selling period</label>
-                                            <select name="duration" required class="highlight bar" style="background-color:red">
-                                                <option value="1">1時間</option>
-                                                <option value="2">1日 (24時間)</option>
-                                                <option value="3">3日間</option>
-                                                <option value="4">1週間</option>
-                                                <option value="5">3分間</option>
-                                            </select>
+                                            <div class="cp_ipselect">
+
+                                                <select name="duration" required class="cp_sl06">
+                                                    <option disabled>Selling Period: 商品の募集期間を選んでください</option>
+                                                    <option value="1">1時間</option>
+                                                    <option value="2">1日 (24時間)</option>
+                                                    <option value="3">3日間</option>
+                                                    <option value="4">1週間</option>
+                                                    <option value="5">3分間</option>
+                                                </select>
+                                                <span class="cp_sl06_highlight"></span>
+                                                <span class="cp_sl06_selectbar"></span>
+                                                <label class="cp_sl06_selectlabel">Selling Period: 商品の募集期間を選んでください</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- <div class="col-12 col-md-6">
