@@ -19,13 +19,13 @@
                                     </div>
 
                                     <div class="col-12 col-md-12">
-                                        <p class="w-text">Upload Profile Pic</p>
+                                    <p class="w-text">Upload Item File : 画像を変える場合のみアップロードしてください</p>
                                         <div class="group-file">
-                                            <p class="g-text">PNG, GIF, WEBP, MP4 or MP3. Max 100mb</p>
-                                            <img src="/users/{{$user->prof_img}}">
-                                            <div class="new_Btn more-btn">Upload File</div><br>
-                                            <input type="file" name="prof_img" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" autofocus>
-
+                                            <p class="g-text">PNG, JPG, JPEG</p>
+                                            <img id="uploaded" style="margin-bottom:10px">
+                                            <label for="upload-btn" class="new_Btn more-btn" style="display:inline-block;">Upload File<br>
+                                            <input type="file" name="prof_img" id="upload-btn" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" autofocus>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-12">

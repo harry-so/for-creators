@@ -37,6 +37,8 @@ use App\Purchaser;
 
 require __DIR__.'/auth.php';
 
+Route::get('/home', [GeneralController::class, 'index']);
+
 // トップページ周り
 Route::get('/', [GeneralController::class, 'index']);
 Route::get('/contact-us',[GeneralController::class, 'contact'])->name("contact-us");

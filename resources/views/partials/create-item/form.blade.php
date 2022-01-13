@@ -50,7 +50,7 @@
                             <div class="dream-dots text-left fadeInUp" data-wow-delay="0.2s">
                                 <span class="gradient-text ">Create New Item</span>
                             </div>
-                            <h4 class="fadeInUp" data-wow-delay="0.3s">Create Item : 出品しよう！</h4>
+                            <h4 class="fadeInUp" data-wow-delay="0.3s">Create Item: 出品</h4>
                         </div>
                         <div class="contact_form">
                             <form action="{{ url('list') }}" method="post" id="main_contact_form" enctype='multipart/form-data'>
@@ -122,7 +122,6 @@
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Min Price you wanna sell : これ以下では売りたくないという最低価格を入力してください（他の方には公開されません。）</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -164,7 +163,8 @@
                                     </div> -->
 
                                     <div class="col-12 text-center">
-                                        <button type="submit" class="more-btn mb-15">Create Item</button>
+                                        <p class="w-text mr-5p">最低価格と販売期間は編集できません、最後にもう一度確認ください! </p>
+                                        <button type="submit" class="more-btn mb-15">出品する</button>
                                     </div>
                                 </div>
                             </form>

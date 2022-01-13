@@ -5,7 +5,7 @@
 
         <div class="row clearfix">
            <!--Footer Column-->
-           <div class="footer-column col-md-4 col-sm-6 col-xs-12">
+           <div class="footer-column col-md-6 col-sm-6 col-xs-12">
               <div class="footer-widget about-widget">
                  <h3 class="has-line-center">About Us</h3>
                  <div class="widget-content">
@@ -38,11 +38,11 @@
              <!-- End Footer Column -->
 
              <!--Footer Column-->
-             <div class="footer-column col-md-4 col-sm-12 col-xs-12">
+             <div class="footer-column col-md-6 col-sm-12 col-xs-12">
                  <div class="footer-widget newsletter-widget">
                      <h3 class="has-line-center">Newsletter</h3>
                      <div class="widget-content">
-                       <div class="text">Stay Updated with our latest news. We promise not to spam</div>
+                       <div class="text">For Creatorsに関する情報を定期的に配信します。 <br> ご支援いただける方はご登録ください。</div>
                          <div class="newsletter-form">
                              <form method="post">
                                  <div class="form-group">

@@ -12,14 +12,9 @@
                 <div class="sidebar-area">
                     <div class="donnot-miss-widget">
                         <div class="who-we-contant">
-                            <div class="filers-list">
-                                <a href="{{ url('/discover') }}" class="filter-item">
-                                    <img src="{{asset('public/img/icons/f1.png')}}" alt="">{{$item->user->name}}
-                                </a>
-                            </div>
-                            <h4 class="fadeInUp" data-wow-delay="0.3s">{{$item->item_name}}</h4>
+                            <h4 class="fadeInUp" data-wow-delay="0.3s" style="margin-top:20px">{{$item->item_name}}</h4>
                         </div>
-                        <div class="mb-15 gray-text"><span class="w-text mr-15">Current Bids: </span><span class="gray-text mr-15">{{$bid_count}} </span></div>
+                        <div class="mb-15 gray-text"><span class="w-text mr-15">Current Bids: </span><span class="gray-text mr-15">{{$bid_count}} Bids</span></div>
                         <div class="details-list">
                             <p>Created : <span>{{$item->published}}</span></p>
                             <p>End Time : <span>{{$item->endtime}}</span></p>
@@ -27,14 +22,14 @@
                         </div>
                         <div class="highest-bid">
                             <h5 class="w-text mb-15">Item Description</h5>
-                            <div class="admire w-text">    
+                            <div class="w-text">    
                                 {{$item->item_desc}}
                             </div>
                         </div>
 
                         <div class="author-item mb-30"> 
                             <!-- 画像変える -->
-                            <div class="author-img ml-0"><img src="/users/{{$item->user->prof_img}}" width="70" alt=""></div>
+                            <div class="author-img ml-0"><img src="/users/{{$item->user->prof_img}}"class="prof_img" style="width:70px; height:70px;" alt=""></div>
                             <div class="author-info">
                                 <a href="{{ url('/profile') }}"><h5 class="author-name">{{$item->user->name}}</h5></a>
                                 <p class="author-earn mb-0">Owner</p>
@@ -42,7 +37,7 @@
                         </div>
                         <div class="highest-bid">
                             <h5 class="w-text mb-15">Who I am</h5>
-                            <div class="admire w-text">    
+                            <div class="w-text">    
                                 {{$item->user->user_desc}}
                             </div>
                         </div>

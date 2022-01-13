@@ -1,4 +1,4 @@
-<section class="features section-padding-0-100 ">
+<section class="features section-padding-100-70 ">
 
         <div class="container">
             <div class="section-heading text-center">
@@ -19,7 +19,7 @@
                             <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt="" class="pricing-img"></a>
                             </div>
                             <div class="owner-info">
-                                <img src="users/{{$item->user->prof_img}}" alt="" class="prof_img">
+                                <img src="/users/{{$item->user->prof_img}}" alt="" class="prof_img" style="width:40px; height:40px;">
                                 <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
                             </div>
                                 <div>

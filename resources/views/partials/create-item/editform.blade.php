@@ -32,7 +32,7 @@
                             <div class="dream-dots text-left fadeInUp" data-wow-delay="0.2s">
                                 <span class="gradient-text ">Edit Your Item</span>
                             </div>
-                            <h4 class="fadeInUp" data-wow-delay="0.3s">Edit Item : 編集</h4>
+                            <h4 class="fadeInUp" data-wow-delay="0.3s">Edit Your Item: 編集</h4>
                         </div>
                         <div class="contact_form">
                             <form action="{{ url('item/update') }}" method="post" id="main_contact_form" enctype='multipart/form-data'>
@@ -43,12 +43,12 @@
                                     </div>
 
                                     <div class="col-12 col-md-12">
-                                        <p class="w-text">Upload Item File : あなたの商品を一番よく表している写真をアップロードしてください</p>
+                                        <p class="w-text">Upload Item File : 画像を変える場合のみアップロードしてください</p>
                                         <div class="group-file">
                                             <p class="g-text">PNG, JPG, JPEG</p>
                                             <img id="uploaded" style="margin-bottom:10px">
                                             <label for="upload-btn" class="new_Btn more-btn" style="display:inline-block;">Upload File<br>
-                                            <input type="file" name="img_1" id="upload-btn" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" required autofocus>
+                                            <input type="file" name="img_1" id="upload-btn" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" autofocus>
                                             </label>
                                         </div>
                                     </div>
@@ -94,19 +94,16 @@
                                             <label>Item Description : 詳しく商品について熱く語ってください！</label>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-12">
+                                    <!-- <div class="col-12 col-md-12">
                                         <div class="group">
                                             <input type="text" name="min_price" id="Price" required value="{{$item->min_price}}">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Min Price you can't sell : これ以下では売りたくないという最低価格を入力してください（他の方には公開されません。）</label>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
+                                    </div> -->
+                                    <!-- <div class="col-12 col-md-6">
                                         <div class="group">
-                                            <!-- <input type="text" name="duration" id="Royalties" required> -->
-                                            <!-- <span class="highlight"></span> -->
-                                            <!-- <span class="bar"></span> -->
                                             <div class="cp_ipselect">
                                                 <select name="duration" required class="cp_sl06">
                                                     <option disabled>Selling Period: 商品の募集期間を選んでください</option>
@@ -121,7 +118,7 @@
                                                 <label class="cp_sl06_selectlabel">Selling Period: 商品の募集期間を選んでください</label>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <input type="hidden" name="id" value="{{$item->id}}" /> <!--/ id 値を送信 -->
                                     <div class="col-12 text-center">
                                         <button type="submit" class="more-btn mb-15">Update</button>

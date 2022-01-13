@@ -3913,10 +3913,11 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 .prof_img {
     border-radius:50%;
     object-fit:cover;
-    width:40px;
-    height:40px;
+    
 }
-
+.vertical-middle {
+    vertical-align:middle;
+}
 .owner-info{
     display: flex;
     align-items: center;
@@ -4903,7 +4904,7 @@ textarea:required {
 
 .main-footer .newsletter-widget{
     position:relative;
-    max-width:300px;
+    max-width:350px;
     margin:0 auto;
 }
 
@@ -6271,6 +6272,7 @@ body.light-version {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .collection-item{

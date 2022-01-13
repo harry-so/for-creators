@@ -245,6 +245,7 @@ class ItemsController extends Controller
         }
         $items->item_name = $request->item_name;
         $items->min_price = $request->min_price;
+        $items->duration = $request->duration;
         $items->user_id = Auth::id();
         $items->item_desc = $request->item_desc;
         $items->save();
