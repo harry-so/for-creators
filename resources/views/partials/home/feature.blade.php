@@ -7,7 +7,7 @@
                      <span>Dicover Items</span>
                 </div>
                 <h2 class="fadeInUp" data-wow-delay="0.3s">Listed Items</h2>
-                <p class="fadeInUp" data-wow-delay="0.4s">出品中や取引が成立したアイテムを見てみましょう！気になったアイテムには購入申請をしてみましょう。</p>
+                <p class="fadeInUp" data-wow-delay="0.4s">出品中や取引が成立したアイテムを見てみましょう！<br> 気になったアイテムには購入申請をしてみましょう。</p>
             </div>
 
             <div class="row align-items-center">
@@ -19,7 +19,7 @@
                             <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt="" class="pricing-img"></a>
                             </div>
                             <div class="owner-info">
-                                <img src="{{ asset('img/authors/2.png') }}" width="40" alt="">
+                                <img src="users/{{$item->user->prof_img}}" width="40" alt="" class="prof_img">
                                 <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
                             </div>
                                 <div>
@@ -65,11 +65,12 @@
                     <div class="pricing-item ">
                         <div class="wraper">
                             <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/1.png') }}" alt=""></a>
-                            <a href="{{ url('/item-details') }}"><h4>Scarecrow in daylight</h4></a>
+                            
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/2.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
+                            <a href="{{ url('/item-details') }}"><h4>Scarecrow in daylight</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
@@ -82,11 +83,12 @@
                     <div class="pricing-item ">
                         <div class="wraper">
                             <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/2.png') }}" alt=""></a>
-                            <a href="{{ url('/item-details') }}"><h4>Darklight Angel 01</h4></a>
+                            
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/3.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
+                            <a href="{{ url('/item-details') }}"><h4>Darklight Angel 01</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
@@ -99,11 +101,12 @@
                     <div class="pricing-item ">
                         <div class="wraper">
                             <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/3.png') }}" alt=""></a>
-                            <a href="{{ url('/item-details') }}"><h4>Becoming one with Nature</h4></a>
+                            
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/8.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
+                            <a href="{{ url('/item-details') }}"><h4>Becoming one with Nature</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
@@ -115,12 +118,13 @@
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
                         <div class="wraper">
-                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/4.png') }}" alt=""></a>
-                            <a href="{{ url('/item-details') }}"><h4>Twilight Fracture City</h4></a>
+                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/4.png') }}" alt="" class="pricing-img"></a>
+                            
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/6.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
+                            <a href="{{ url('/item-details') }}"><h4>Twilight Fracture City</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
@@ -133,12 +137,14 @@
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
                         <div class="wraper">
-                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/5.png') }}" alt=""></a>
-                            <a href="{{ url('/item-details') }}"><h4>Resonate Sanctuary II</h4></a>
+                        <div class="pricing-img-wrapper">
+                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/5.png') }}" alt="" class="pricing-img"></a>
+                        </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/2.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
+                            <a href="{{ url('/item-details') }}"><h4>Resonate Sanctuary II</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
@@ -150,12 +156,14 @@
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
                         <div class="wraper">
-                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/6.png') }}" alt=""></a>
-                            <a href="{{ url('/item-details') }}"><h4>Analogue refraction #3</h4></a>
+                        <div class="pricing-img-wrapper">
+                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/6.png') }}" alt="" class="pricing-img"></a>
+                            </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/3.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
+                            <a href="{{ url('/item-details') }}"><h4>Analogue refraction #3</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
@@ -167,12 +175,14 @@
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
                         <div class="wraper">
-                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/7.png') }}" alt=""></a>
-                            <a href="{{ url('/item-details') }}"><h4>Super-Neumorphism #7</h4></a>
+                        <div class="pricing-img-wrapper">
+                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/7.png') }}" alt="" class="pricing-img"></a>
+                            </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/8.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
+                            <a href="{{ url('/item-details') }}"><h4>Super-Neumorphism #7</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
@@ -184,12 +194,14 @@
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
                         <div class="wraper">
-                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/8.png') }}" alt=""></a>
-                            <a href="{{ url('/item-details') }}"><h4>Exe Dream Sequence </h4></a>
+                        <div class="pricing-img-wrapper">
+                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/8.png') }}" alt="" class="pricing-img"></a>
+                            </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/6.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
+                            <a href="{{ url('/item-details') }}"><h4>Exe Dream Sequence </h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
