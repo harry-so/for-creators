@@ -15,13 +15,17 @@
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
                         <div class="wraper">
-                            <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt=""></a>
-                            <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
+                            <div class="pricing-img-wrapper">
+                            <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt="" class="pricing-img"></a>
+                            </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/2.png') }}" width="40" alt="">
                                 <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
                             </div>
-                            <div><span class="g-text">{{$item->item_desc}}</span></div>
+                                <div>
+                                    <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
+                                    <div><span class="g-text">{{$item->item_desc}}</span></div>
+                                </div>
                     <!-- 残り時間計算 -->
                         <?php
                         $enddate = strtotime($item->endtime);
@@ -43,11 +47,12 @@
                         };
                         
                         ?> 
-
+                            
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>{{$timeleft}}</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>{{$item->bid->count()}} Bids</div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
