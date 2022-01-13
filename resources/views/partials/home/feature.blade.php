@@ -4,10 +4,10 @@
             <div class="section-heading text-center">
                 <!-- Dream Dots -->
                 <div class="dream-dots justify-content-center fadeInUp" data-wow-delay="0.2s">
-                     <span>Dicover New Items</span>
+                     <span>Dicover Items</span>
                 </div>
-                <h2 class="fadeInUp" data-wow-delay="0.3s">New Listed Items</h2>
-                <p class="fadeInUp" data-wow-delay="0.4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.</p>
+                <h2 class="fadeInUp" data-wow-delay="0.3s">Listed Items</h2>
+                <p class="fadeInUp" data-wow-delay="0.4s">出品中や取引が成立したアイテムを見てみましょう！気になったアイテムには購入申請をしてみましょう。</p>
             </div>
 
             <div class="row align-items-center">
@@ -46,7 +46,7 @@
 
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>{{$timeleft}}</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>{{$item->bid->count()}}</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>{{$item->bid->count()}} Bids</div>
                             </div>
                         </div>
                     </div>
@@ -65,11 +65,10 @@
                                 <img src="{{ asset('img/authors/2.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
-                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-15">1 of 10</span></span>
-                            <div class="pricing">Highest Bid : <span class="ml-15">0.081 ETH</span> </div>
+                            <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                                <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
                             </div>
                         </div>
                     </div>
@@ -83,11 +82,10 @@
                                 <img src="{{ asset('img/authors/3.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
-                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-15">1 of 10</span></span>
-                            <div class="pricing">Highest Bid : <span class="ml-15">0.081 ETH</span> </div>
+                            <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                                <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
                             </div>
                         </div>
                     </div>
@@ -101,11 +99,10 @@
                                 <img src="{{ asset('img/authors/8.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
-                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-15">1 of 10</span></span>
-                            <div class="pricing">Highest Bid : <span class="ml-15">0.081 ETH</span> </div>
+                            <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                                <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
                             </div>
                         </div>
                     </div>
@@ -119,11 +116,10 @@
                                 <img src="{{ asset('img/authors/6.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
-                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-15">1 of 10</span></span>
-                            <div class="pricing">Highest Bid : <span class="ml-15">0.081 ETH</span> </div>
+                            <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                                <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
                             </div>
                         </div>
                     </div>
@@ -138,11 +134,10 @@
                                 <img src="{{ asset('img/authors/2.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
-                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-15">1 of 10</span></span>
-                            <div class="pricing">Highest Bid : <span class="ml-15">0.081 ETH</span> </div>
+                            <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                                <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
                             </div>
                         </div>
                     </div>
@@ -156,11 +151,10 @@
                                 <img src="{{ asset('img/authors/3.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
-                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-15">1 of 10</span></span>
-                            <div class="pricing">Highest Bid : <span class="ml-15">0.081 ETH</span> </div>
+                            <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                                <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
                             </div>
                         </div>
                     </div>
@@ -174,11 +168,10 @@
                                 <img src="{{ asset('img/authors/8.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
-                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-15">1 of 10</span></span>
-                            <div class="pricing">Highest Bid : <span class="ml-15">0.081 ETH</span> </div>
+                            <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                                <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
                             </div>
                         </div>
                     </div>
@@ -192,11 +185,10 @@
                                 <img src="{{ asset('img/authors/6.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
-                            <span><span class="g-text">Price</span> 0.081 ETH <span class="g-text ml-15">1 of 10</span></span>
-                            <div class="pricing">Highest Bid : <span class="ml-15">0.081 ETH</span> </div>
+                            <div><span class="g-text">出品アイテム例です。</span></div>
                             <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>6 Hours Ago</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>134 Like</div>
+                                <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
+                                <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
                             </div>
                         </div>
                     </div>
