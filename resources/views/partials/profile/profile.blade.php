@@ -64,9 +64,7 @@
                                             <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
                                             <div><span class="g-text"> {!! nl2br($item->item_desc) !!}</span></div>
                                         </div>
-                                            @if($item->purchaser)
-                                            <div class="pricing">Final Price : <span class="ml-15">{{$item->purchaser->final_price}}</span> </div>
-                                            @endif
+
                                             <?php
                                                 $enddate = strtotime($item->endtime);
                                                 $startdate = strtotime('now');
@@ -101,11 +99,16 @@
                             <div class="col-12 col-md-6 col-lg-4 single_gallery_item support">
                                 <div class="pricing-item ">
                                     <div class="wraper">
-                                        <a href="{{ url('/item/'.$purchase->item_id) }}"><img src="{{asset('img/art-work/2.png')}}" alt=""></a>
-                                        <a href="{{ url('/item/'.$purchase->item_id) }}"><h4>{{$purchase->item->item_name}}</h4></a>
+                                        <div class="pricing-img-wrapper">
+                                            <a href="{{ url('/item/'.$purchase->item_id) }}"><img src="/items/{{$purchase->item->img_1}}" class="pricing-img" alt=""></a>
+                                        </div>
                                         <div class="owner-info">
                                             <img src="{{asset('img/authors/2.png')}}" width="40" alt="">
                                             <a href="{{ url('/user/'.$purchase->item->user->id) }}"><h3>@ {{$purchase->item->user->name}}</h3></a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ url('/item/'.$purchase->item_id) }}"><h4>{{$purchase->item->item_name}}</h4></a>
+                                            
                                         </div>
                                         <span><span class="g-text">Published: </span> {{$purchase->item->published}} </span>
                                         <div class="pricing"> Price: <span class="ml-15"> {{number_format($purchase->final_price)}} </span> </div>

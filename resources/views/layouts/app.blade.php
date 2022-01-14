@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="zxx">
 
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- OGP設定 -->
+    <meta property="og:url" content="https:www.for-creators.jp/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="For Creators: クリエイターのためのマーケットプレイス">
+    <meta property="og:site_name" content="For Creators">
     <!-- Title -->
     <title>For Creators</title>
 

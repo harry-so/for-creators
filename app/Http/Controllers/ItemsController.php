@@ -161,13 +161,13 @@ class ItemsController extends Controller
         $bids = Bid::where("item_id", $item->id)->orderby("bid_time")->get();
         $purchase = Purchaser::where("item_id",$item->id)->first();
         $bid_count = Bid::where('item_id',$item->id)->count();
-        $top_sales = Purchaser::orderby('final_price', 'desc')->limit(12)->get();
+        $top_sellers = Purchaser::orderby('final_price', 'desc')->limit(12)->get();
 
         if($purchase) {
             $user = User::where("id",$purchase->purchaser_id)->first();
             
             return view('item-details')->with([
-                'top_sales' => $top_sales,
+                'top_sellers' => $top_sellers,
                 'item'=>$item, 
                 'bids'=>$bids,
                 'your_bid'=>$your_bid,
@@ -177,7 +177,7 @@ class ItemsController extends Controller
             ]);
         } else {
             return view('item-details')->with([
-                'top_sales' => $top_sales,
+                'top_sellers' => $top_sellers,
                 'item'=>$item, 
                 'bids'=>$bids,
                 'your_bid'=>$your_bid,

@@ -766,6 +766,7 @@ ol {
     letter-spacing: 1px;
     display: inline-block;
     padding: 0 20px;
+    
     text-align: center;
     text-transform: uppercase;
     background-size: 200% auto;
@@ -964,9 +965,9 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     min-height: 700px;
     background: url('../img/bg-img/header2.jpg') no-repeat bottom center;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.hero-adjust {
+    margin-top:50px;
 }
 .hero-section.app{
     position: relative;
@@ -1413,6 +1414,25 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     .mb-md-30{
         margin-bottom: 30px
     }
+
+    .welcome-content h2 {
+        font-size: 52px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .welcome-content h1 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .welcome-content h1.artficial{
+        font-size: 38px
+    }
+    .welcome-content p {
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+    }
 }
 @media (max-width: 1200px){
     .main-ilustration-3{
@@ -1427,6 +1447,25 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     .main-ilustration-3 .inovation.num2{
         right: 5%;
         top: 27%;
+    }
+
+    .welcome-content h2 {
+        font-size: 52px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .welcome-content h1 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .welcome-content h1.artficial{
+        font-size: 38px
+    }
+    .welcome-content p {
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
     }
 }
 
@@ -1474,6 +1513,25 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
         width: 150px;
         height: 150px
     }
+
+    .welcome-content h2 {
+        font-size: 52px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .welcome-content h1 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .welcome-content h1.artficial{
+        font-size: 38px
+    }
+    .welcome-content p {
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+    }
 }
 @media (max-width: 480px){
     .main-ilustration-6,
@@ -1482,7 +1540,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     }
     .welcome-content {
         vertical-align: middle;
-        margin-top: 100px !important
+        margin-top: 90px !important;
 
     }
     .main-ilustration-3{
@@ -1491,7 +1549,24 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     .welcome-small-wrapper{
        display: none;
     }
-
+    .welcome-content h2 {
+        font-size: 52px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .welcome-content h1 {
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+    .welcome-content h1.artficial{
+        font-size: 38px
+    }
+    .welcome-content p {
+        font-size: 12px;
+        color: #fff;
+        margin-bottom: 60px;
+    }
 }
 .main-ilustration-2:before{
     content: '';
@@ -1541,24 +1616,6 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     }
 }
 
-.welcome-content h2 {
-    font-size: 52px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.welcome-content h1 {
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.welcome-content h1.artficial{
-    font-size: 38px
-}
-.welcome-content p {
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-}
 
 .character-features{
     position: relative;
@@ -3947,7 +4004,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     font-size: 14px;
     display: inline-block;
     color: #00e0c4;
-    margin: 0 0 7px;
+    margin: 0 0 4px;
 }
 .pricing-item label {
     height: 40px;
@@ -6437,4 +6494,59 @@ body.light-version {
 	left: 0;
 	pointer-events: none;
 	opacity: 0.5;
+}
+
+.tag {
+	display: inline-block;
+  
+  width: auto;
+	height: 38px;
+	
+	background-color: #ca4242;
+	-webkit-border-radius: 3px 4px 4px 3px;
+	-moz-border-radius: 3px 4px 4px 3px;
+	border-radius: 3px 4px 4px 3px;
+	
+	border-left: 1px solid #ca4242;
+
+	/* This makes room for the triangle */
+	margin-left: 19px;
+	
+	position: relative;
+	
+	color: white;
+	font-weight: 300;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 22px;
+	line-height: 38px;
+
+	padding: 0 10px 0 10px;
+
+    margin-bottom: 20px;
+}
+
+/* Makes the triangle */
+.tag:before {
+	content: "";
+	position: absolute;
+	display: block;
+	left: -19px;
+	width: 0;
+	height: 0;
+	border-top: 19px solid transparent;
+	border-bottom: 19px solid transparent;
+	border-right: 19px solid #ca4242;
+}
+
+/* Makes the circle */
+.tag:after {
+	content: "";
+	background-color: white;
+	border-radius: 50%;
+	width: 4px;
+	height: 4px;
+	display: block;
+	position: absolute;
+	left: -9px;
+	top: 17px;
 }

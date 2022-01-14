@@ -7,7 +7,7 @@
                      <span>Dicover Items</span>
                 </div>
                 <h2 class="fadeInUp" data-wow-delay="0.3s">Listed Items</h2>
-                <p class="fadeInUp" data-wow-delay="0.4s">出品中や取引が成立したアイテムを見てみましょう！<br> 気になったアイテムには購入申請をしてみましょう。</p>
+                <p class="fadeInUp" data-wow-delay="0.4s">いろんなアイテムを見てみましょう！<br> 気になったアイテムにはMake a Bid!</p>
             </div>
 
             <div class="row align-items-center">

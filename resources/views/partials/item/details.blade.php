@@ -14,7 +14,12 @@
                         <div class="who-we-contant">
                             <h4 class="fadeInUp" data-wow-delay="0.3s" style="margin-top:20px">{{$item->item_name}}</h4>
                         </div>
+                        @if($purchase)
+                        <span class="tag">{{number_format($purchase->final_price)}} yen</span>
+                        <div class="mb-15 gray-text"><a href="{{ url('/user/'.$purchase->purchaser_id) }}"><span class="w-text mr-15">Supporter: </span><span class="gray-text mr-15">{{$purchase->user->name}}</span></a></div>
+                        @else
                         <div class="mb-15 gray-text"><span class="w-text mr-15">Current Bids: </span><span class="gray-text mr-15">{{$bid_count}} Bids</span></div>
+                        @endif
                         <div class="details-list">
                             <p>Created : <span>{{$item->published}}</span></p>
                             <p>End Time : <span>{{$item->endtime}}</span></p>
@@ -31,7 +36,7 @@
                             <!-- 画像変える -->
                             <div class="author-img ml-0"><img src="/users/{{$item->user->prof_img}}"class="prof_img" style="width:70px; height:70px;" alt=""></div>
                             <div class="author-info">
-                                <a href="{{ url('/profile') }}"><h5 class="author-name">{{$item->user->name}}</h5></a>
+                                <a href="{{ url('/user/'.$item->user->id) }}"><h5 class="author-name">{{$item->user->name}}</h5></a>
                                 <p class="author-earn mb-0">Owner</p>
                             </div>
                         </div>
