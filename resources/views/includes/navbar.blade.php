@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-white fixed-top" id="banner">
     <div class="container">
         <!-- Brand -->
-        <a class="navbar-brand" href="{{ url('/discover') }}"><span><img src="{{asset('img/core-img/logo.png')}}" alt="logo" style="width:50px;height:50px;"></span> For Creators</a>
+        <a class="navbar-brand" href="{{ url('/') }}"><span><img src="{{asset('img/core-img/logo.png')}}" alt="logo" style="width:50px;height:50px;"></span> For Creators</a>
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

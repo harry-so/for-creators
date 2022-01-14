@@ -3,7 +3,7 @@
 
         <div class="row">
             <div class="col-12 col-lg-5">
-                <div class="detailed-img">
+                <div class="detailed-img text-center">
                     <img src="/items/{{$item->img_1}}" alt="">
                 </div>
             </div>
@@ -14,7 +14,7 @@
                         <div class="who-we-contant">
                             <h4 class="fadeInUp" data-wow-delay="0.3s" style="margin-top:20px">{{$item->item_name}}</h4>
                         </div>
-                        @if($purchase)
+                        @if($item->status == 6)
                         <span class="tag">{{number_format($purchase->final_price)}} yen</span>
                         <div class="mb-15 gray-text"><a href="{{ url('/user/'.$purchase->purchaser_id) }}"><span class="w-text mr-15">Supporter: </span><span class="gray-text mr-15">{{$purchase->user->name}}</span></a></div>
                         @else
@@ -34,7 +34,14 @@
 
                         <div class="author-item mb-30"> 
                             <!-- 画像変える -->
-                            <div class="author-img ml-0"><img src="/users/{{$item->user->prof_img}}"class="prof_img" style="width:70px; height:70px;" alt=""></div>
+                        
+                            <div class="author-img ml-0">
+                                @if($item->user->prof_img)
+                                <img src="/users/{{$item->user->prof_img}}" class="prof_img" style="width:70px; height:70px;" alt="">
+                                @else
+                                <img src="{{ asset('img/authors/2.png') }}" class="prof_img" style="width:70px; height:70px;" alt="">
+                                @endif
+                            </div>
                             <div class="author-info">
                                 <a href="{{ url('/user/'.$item->user->id) }}"><h5 class="author-name">{{$item->user->name}}</h5></a>
                                 <p class="author-earn mb-0">Owner</p>
@@ -47,6 +54,7 @@
                             </div>
                         </div>
                         @if(Auth::id() == $item->user_id)
+                        <!-- 出品者のパターン -->
                             @if($item->status == 1)
                             <a href="{{ url('/itemedit/'.$item->id) }}" class="open-popup-link more-btn width-100 mt-30">Edit</a>
                             @elseif($item->status == 6)
@@ -55,14 +63,26 @@
                             <a href="{{ url('/discover') }}" class="open-popup-link more-btn width-100 mt-30">出品期間は終了しました</a>
                             @endif
                         @else
-                            @if($item->status == 1)
+                        <!-- 出品者ではないパターン -->
+                            @if($purchase) 
+                            <!-- 募集期間後で購入者がいる場合の商品 -->
+                                @if(Auth::id() == $purchase->purchaser_id)
+                                <!-- その人が購入者のパターン -->
+                                <a href="{{ url('/transaction/'.$item->purchaser->id) }}" class="open-popup-link more-btn width-100 mt-30">取引画面へ</a>
+                                @else
+                                <!-- それ以外 -->
+                                <a href="{{ url('/discover') }}" class="open-popup-link more-btn width-100 mt-30">出品期間は終了しました (他の商品を探す)</a>
+                                @endif
+                            @elseif($item->status == 1)
+                            <!-- 募集中 -->
                                 @if(isset($your_bid))
                                 <a href="{{ url('/purchaseedit/'.$your_bid->id) }}" class="open-popup-link more-btn width-100 mt-30">Edit Your Bid</a>    
                                 @else
                                 <a href="{{ url('/purchase/'.$item->id) }}" class="open-popup-link more-btn width-100 mt-30">Place Bid</a>
                                 @endif
                             @else
-                            <a href="{{ url('/discover') }}" class="open-popup-link more-btn width-100 mt-30">出品期間は終了しました (他の商品を探す)</a>
+                            <!-- 募集も終わり、取引も成立しなかった -->
+                            <a href="{{ url('/discover') }}" class="open-popup-link more-btn width-100 mt-30">出品期間は終了しました (他の商品を探す)</a>    
                             @endif
                         @endif
                         
@@ -201,6 +221,41 @@
             </div>
         </div>
     </div>
+    <div class="section-heading text-center" style="margin-top:20px">
+        <!-- Dream Dots -->
+        <h2 class="fadeInUp" data-wow-delay="0.3s">Messages<img src="img/art-work/fire.png" width="20" alt=""></h2>
+        <div class="dream-dots justify-content-center fadeInUp cv" data-wow-delay="0.2s">
+                <span>サポーターから届いたメッセージ <br>（他の方には非公開です）</span>  
+        </div>
+    </div>
+    <div class="timelineBox">
+        <ul class="timeline">
+        @foreach($bids as $bid)
+            <li>
+                <div class="chat-container">
+                    <div class="sup-icon"><a href="{{ url('/user/'.$bid->user->id) }}">
+                        <span class="aut-info-chat">
+                            @if($bid->user->prof_img)
+                            <img src="/users/{{$bid->user->prof_img}}" width="50" alt="">
+                            @else
+                            <img src="{{asset('img/authors/2.png')}}" width="50" alt="">
+                            @endif
+                        </span>
+                        <p class="msg-name">{{$bid->user->name}}</p></a>
+                    </div>
+                    <div class="chat-info">
+                        <div class="arrow">
+                            <p class="reply-content"> {{$bid->message}} </p>
+                        </div>
+                        <div class="reply-date">
+                                <p class="chat-date"><i class="fa fa-clock-o mr-5p"></i>{{ date('Y/m/d H:i', strtotime($bid->created_at) )}}</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        @endforeach
+        </ui>
+    </div>
 <style>
 .time-container {
   display: flex;
@@ -208,6 +263,13 @@
 .count-box {
     width: 25% ;
     color:white;
+}
+.cv span {
+    display:block;
+}
+.sup-icon {
+    display:flex;
+    align-items:center;
 }
 .time {
     font-size: 10px;
@@ -225,5 +287,85 @@
   font-size: 2rem;
   /* margin-right:; */
 }
+
+.fa-user-circle {
+    height:25px;
+    width:25px;
+}
+.reply-content {
+    text-align:left;
+    margin: 3px 0;
+    color:#333333
+}
+.msg-name {
+    text-align:center;
+    color:darkgray;
+    margin: 2px 0;
+    font-size:12px;
+}
+.reply-date {
+    text-align:right;
+    color:darkgray;
+    margin: 1px 0;
+    font-size:10px;
+}
+
+.reply-comment {
+    display:flex;
+    
+}
+.arrow{
+    position:relative;
+    width:60vw;
+    background:#E6E6E6;
+    padding:10px;
+    text-align:left;
+    color:#333333;
+    font-size:14px;
+    font-weight:bold;
+    border-radius:15px;
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    margin:5px 0 5px 45px;
+}
+
+.arrow:after{
+    border: solid transparent;
+    content:'';
+    height:0;
+    width:0;
+    pointer-events:none;
+    position:absolute;
+    border-color: rgba(230, 230, 230, 0);
+    border-top-width:10px;
+    border-bottom-width:10px;
+    border-left-width:20px;
+    border-right-width:20px;
+    margin-top: -10px;
+    border-right-color:#E6E6E6;
+    right:100%;
+    top:50%;
+}
+.chat-container {
+    display:flex;
+    justify-content:center;
+    margin: auto;
+}
+.chat-input {
+    display:flex;
+    justify-content:center;
+    margin: 5px 0 5px 0;
+}
+
+.chat-info {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.chat-date {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
 </style>
 </section>

@@ -10,7 +10,11 @@
                             <img src="{{asset('img/art-work/profile-header.jpg')}}" class="center-block" alt="">
                         </div>
                         <span class="aut-info">
-                            <img src="/users/{{Auth::user()->prof_img}}" width="65" alt="">
+                            @if(Auth::user()->prof_img)
+                            <img src="/users/{{Auth::user()->prof_img}}" >
+                            @else
+                            <img src="{{ asset('img/authors/2.png') }}" >
+                            @endif
                         </span>
                         <div class="collection_info text-center">
                             <h6>{{Auth::user()->name}}</h6>

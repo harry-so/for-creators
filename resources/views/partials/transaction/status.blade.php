@@ -75,12 +75,14 @@
                         <h6>無事にお手元にお望みのものが届きましたか? 購入者の方は感謝の気持ちを伝えて、取引終了ボタンを忘れずに!</h6>
                         <span>取引終了後、一定期間が経ちましたらチャットは非開示になります。</span>
                     </div> -->
+                
+                @if(Auth::id() == $purchase->purchaser_id)
                 </li>
                     <!-- 購入者しかおせないようにする -->
                     <div class="col-12 col-lg-12 text-center" style="margin:10px 0 0 0">
                         <a class="btn more-btn fadeInUp" data-wow-delay="0.6s" href="{{ url('/complete/'.$purchase->id) }}">取引完了</a>
                     </div>
-                    
+                @endif
 
                 @else
                 <li>

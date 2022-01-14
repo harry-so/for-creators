@@ -23,7 +23,7 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        $items = Item::where("status",1)->orwhere("status",6)->orderBy('created_at', 'desc')->paginate(12);
+        $items = Item::where("status",1)->orderBy('created_at', 'desc')->paginate(12);
         
         if(Auth::check()) {
             return view('index', [
@@ -157,37 +157,20 @@ class ItemsController extends Controller
     //  商品ページ
     public function show(Item $item)
     {   
-
         $your_bid = Bid::where('item_id',$item->id)->where('user_id',Auth::id())->first();
         $bids = Bid::where("item_id", $item->id)->orderby("bid_time")->get();
         $purchase = Purchaser::where("item_id",$item->id)->first();
         $bid_count = Bid::where('item_id',$item->id)->count();
         $top_sellers = Purchaser::orderby('final_price', 'desc')->limit(12)->get();
-
-        if($purchase) {
-            $user = User::where("id",$purchase->purchaser_id)->first();
-            
-            return view('item-details')->with([
-                'top_sellers' => $top_sellers,
-                'item'=>$item, 
-                'bids'=>$bids,
-                'your_bid'=>$your_bid,
-                'purchase'=>$purchase,
-                'user'=>$user,
-                'bid_count'=>$bid_count,
+        return view('item-details')->with([
+            'top_sellers' => $top_sellers,
+            'item'=>$item, 
+            'bids'=>$bids,
+            'your_bid'=>$your_bid,
+            'purchase'=>$purchase,
+            'bid_count'=>$bid_count,
             ]);
-        } else {
-            return view('item-details')->with([
-                'top_sellers' => $top_sellers,
-                'item'=>$item, 
-                'bids'=>$bids,
-                'your_bid'=>$your_bid,
-                'bid_count'=>$bid_count,
-        ]);
-
-        }
         
-
     }
 
     /**

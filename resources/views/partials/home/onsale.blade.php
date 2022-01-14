@@ -6,18 +6,9 @@
                 <div class="dream-dots justify-content-center fadeInUp" data-wow-delay="0.2s">
                      <span>Dicover Items</span>
                 </div>
-                <h2 class="fadeInUp" data-wow-delay="0.3s">Listed Items</h2>
-                <p class="fadeInUp" data-wow-delay="0.4s">いろんなアイテムを見てみましょう！<br> 気になったアイテムにはMake a Bid!</p>
+                <h2 class="fadeInUp" data-wow-delay="0.3s">Items On Sales!!</h2>
+                <p class="fadeInUp" data-wow-delay="0.4s">出品中のアイテムを見てみましょう<br> 気になったら時間内にMake a Bid!</p>
             </div>
-            <!-- <div class="dream-projects-menu mb-50">
-                <div class="text-center portfolio-menu">
-                    <button class="btn active" data-filter="*">All</button>
-                    <button class="btn" data-filter=".onsale">On Sale</button>
-                    <button class="btn" data-filter=".sold">Sold</button>
-                    <button class="btn" data-filter=".unsold">Unsold</button>
-                    <button class="btn" data-filter=".development">On Auction</button>
-                </div>
-            </div> -->
             <div class="row align-items-center">
                 @foreach($items as $item)
                 @if($item->status == 1)

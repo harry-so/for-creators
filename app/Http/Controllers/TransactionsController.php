@@ -14,10 +14,14 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\BidCompletedMail;
+use Illuminate\Contracts\Mail\Mailable;
 
 
 class TransactionsController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+      }
     
     public function apply (Item $item){
         return view('purchase',['item'=>$item]);

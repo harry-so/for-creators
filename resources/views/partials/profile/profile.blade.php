@@ -61,8 +61,12 @@
                                             <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt="" class="pricing-img"></a>
                                         </div>
                                         <div class="owner-info">
+                                        @if($item->user->prof_img)
                                             <img src="/users/{{$item->user->prof_img}}" alt="" class="prof_img" style="width:40px; height:40px;">
-                                            <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
+                                        @else
+                                            <img src="{{ asset('img/authors/2.png') }}" alt="" class="prof_img" style="width:40px; height:40px;">
+                                        @endif
+                                            <a href="{{ url('/user/'.$item->user_id) }}"><h3>＠ {{$item->user->name}}</h3></a>
                                         </div>
                                         <div>
                                             <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
@@ -108,7 +112,7 @@
                                         </div>
                                         <div class="owner-info">
                                             <img src="{{asset('img/authors/2.png')}}" width="40" alt="">
-                                            <a href="{{ url('/user/'.$purchase->item->user->id) }}"><h3>@ {{$purchase->item->user->name}}</h3></a>
+                                            <a href="{{ url('/user/'.$purchase->item->user->id) }}"><h3>＠ {{$purchase->item->user->name}}</h3></a>
                                         </div>
                                         <div>
                                             <a href="{{ url('/item/'.$purchase->item_id) }}"><h4>{{$purchase->item->item_name}}</h4></a>
@@ -124,7 +128,7 @@
 
                         </div>
                         <div class="col-12 col-lg-12 text-center">
-                                <a class="btn more-btn fadeInUp" data-wow-delay="0.6s" href="{{ url('/discover') }}">Load More</a>
+                                <a class="btn more-btn fadeInUp" data-wow-delay="0.6s" href="{{ url('/discover') }}">Explore More</a>
                         </div>
                     </div>
                 </div>

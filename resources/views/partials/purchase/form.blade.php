@@ -10,28 +10,23 @@
                             <img src="{{asset('img/art-work/profile-header.jpg')}}" class="center-block" alt="">
                         </div>
                         <span class="aut-info">
-                            <img src="{{asset('img/authors/2.png')}}" width="50" alt="">
+                            @if(Auth::user()->prof_img)
+                            <img src="/users/{{Auth::user()->prof_img}}" >
+                            @else
+                            <img src="{{ asset('img/authors/2.png') }}" >
+                            @endif
                         </span>
                         <div class="collection_info text-center">
                             <h6>{{Auth::user()->name}}</h6>
-                            <p class="w-text mr-5p">Creative NFTs Designer <img src="{{asset('img/art-work/fire.png')}}" width="20" alt=""></p>
-                            <p class="mt-15">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos distinctio labore.</p>
+                            <p class="w-text mr-5p">{{Auth::user()->title}}<img src="{{asset('img/art-work/fire.png')}}" width="20" alt=""></p>
+                            <p class="mt-15">{{Auth::user()->user_desc}}</p>
 
-                            <div class="search-widget-area mt-15">
-                                <form action="#" method="post">
-                                    <input type="text" name="wallet" id="wallet" value="Xjo03s-osi6732...">
-                                    <button class="btn"><i class="fa fa-copy"></i></button>
-                                </form>
-                            </div>
-
-                            <ul class="social-links mt-30 mb-30">
-                              <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                              <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                              <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                              <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                              <li><a href="#"><span class="fa fa-instagram"></span></a></li>
-                           </ul>
-                            <a href="{{ url('/profile') }}" class="more-btn">Follow</a>
+                            <ul class="social-links mt-15">
+                              <li><a href="{{Auth::user()->website}}"><span class="fa fa-laptop"></span></a></li>
+                              <li><a href="{{Auth::user()->twitter}}"><span class="fa fa-twitter"></span></a></li>
+                              <li><a href="{{Auth::user()->instagram}}"><span class="fa fa-instagram"></span></a></li>
+                            </ul>
+                            <a href="{{ url('/useredit/'.Auth::user()->id) }}" class="more-btn mt-15">Edit</a>
                         </div>
 
                     </div>

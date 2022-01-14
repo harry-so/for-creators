@@ -17,7 +17,7 @@ class GeneralController extends Controller
 {
     public function index()
     {
-        $items = Item::orderBy('created_at', 'desc')->simplePaginate(12);
+        $items = Item::where("status",1)->orderBy('created_at', 'desc')->SimplePaginate(12);
         $top_sellers = Purchaser::orderby('final_price', 'desc')->limit(12)->get();
         // $onsales = Item::where(strtotime("endtime"), ">=", date('Y-m-d H:i:s'))->paginate(4);
         $top_supporters = DB::table('purchaser')
