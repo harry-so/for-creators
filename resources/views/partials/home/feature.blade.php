@@ -215,7 +215,7 @@
 
             
                 <div class="col-12 col-lg-12 text-center" style="margin:auto;">
-                            {{$items->onEachSide(2)->links()}}
+                            {{$items->onEachSide(2)->links('pagination::bootstrap-4')}}
                 </div>
             </div>
             
