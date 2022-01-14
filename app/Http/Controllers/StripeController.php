@@ -10,6 +10,7 @@ use App\User;
 use App\Bid;
 use App\Chats;
 use App\Purchaser;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
 class StripeController extends Controller

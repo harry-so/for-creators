@@ -3942,6 +3942,20 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     
 }
 
+@media (min-width:990px) {
+    .pricing-item {
+        border-radius: 10px;
+        background-color: #0a1026;
+        height:420px;
+        position: relative;
+        border: solid 1px rgba(255,255,255,0.25);
+        text-align: left;
+        padding: 10px 10px 20px;
+        margin: 0 0 30px;
+    }
+    
+}
+
 .pricing-item {
     border-radius: 10px;
     background-color: #0a1026;
