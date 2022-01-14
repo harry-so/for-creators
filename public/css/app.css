@@ -6389,7 +6389,8 @@ body.light-version {
     font-size: 12px
 }
 .bid-item .author-info{
-    flex: auto
+    flex: auto;
+    align-items:center;
 }
 .biding-end{
     text-align: center;

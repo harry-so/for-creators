@@ -149,7 +149,7 @@
                         </div>
                     </div>
                     @else
-                    <div class="author-item mb-0">
+                    <div class="author-item mb-0" style="margin-top:0;">
                         <div class="author-img ml-0"><img src="img/authors/1.png" width="40" alt=""></div>
                         <div class="author-info">
                             <p>まだ入札はありません</p>
@@ -221,6 +221,7 @@
             </div>
         </div>
     </div>
+    @if(Auth::id() == $item->user_id)
     <div class="section-heading text-center" style="margin-top:20px">
         <!-- Dream Dots -->
         <h2 class="fadeInUp" data-wow-delay="0.3s">Messages<img src="img/art-work/fire.png" width="20" alt=""></h2>
@@ -256,6 +257,7 @@
         @endforeach
         </ui>
     </div>
+    @endif
 <style>
 .time-container {
   display: flex;
