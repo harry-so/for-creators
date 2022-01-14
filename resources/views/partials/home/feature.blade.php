@@ -63,6 +63,7 @@
                 @endforeach
             </div>
 
+<<<<<<< HEAD
             <div class="row align-items-center">
 
                 <div class="col-lg-3 col-sm-6 col-xs-12">
@@ -215,6 +216,10 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-12 text-center" style="margin:auto;">
+=======
+            
+                <div class="col-12 col-lg-12 text-center">
+>>>>>>> 212c9ec01d9da2173776af749c478bbb223fec6c
                             {{$items->onEachSide(2)->links()}}
                 </div>
             </div>
