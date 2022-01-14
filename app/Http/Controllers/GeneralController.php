@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Contracts\Mail\Mailable;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,7 @@ class GeneralController extends Controller
 {
     public function index()
     {
-        $items = Item::orderBy('created_at', 'desc')->paginate(12);
+        $items = Item::orderBy('created_at', 'desc')->simplePaginate(12);
         $top_sellers = Purchaser::orderby('final_price', 'desc')->limit(12)->get();
         // $onsales = Item::where(strtotime("endtime"), ">=", date('Y-m-d H:i:s'))->paginate(4);
         $top_supporters = DB::table('purchaser')

@@ -19,7 +19,11 @@
                             <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt="" class="pricing-img"></a>
                             </div>
                             <div class="owner-info">
+                                @if($item->user->prof_img)
                                 <img src="/users/{{$item->user->prof_img}}" alt="" class="prof_img" style="width:40px; height:40px;">
+                                @else
+                                <img src="{{ asset('img/authors/2.png') }}" alt="" class="prof_img" style="width:40px; height:40px;">
+                                @endif
                                 <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
                             </div>
                                 <div>
@@ -142,7 +146,7 @@
                         </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/2.png') }}" width="40" alt="">
-                                <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
+                                <a href="{{ url('/discover') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Resonate Sanctuary II</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
@@ -161,7 +165,7 @@
                             </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/3.png') }}" width="40" alt="">
-                                <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
+                                <a href="{{ url('/discover') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Analogue refraction #3</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
@@ -180,7 +184,7 @@
                             </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/8.png') }}" width="40" alt="">
-                                <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
+                                <a href="{{ url('/discover') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Super-Neumorphism #7</h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
@@ -199,7 +203,7 @@
                             </div>
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/6.png') }}" width="40" alt="">
-                                <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
+                                <a href="{{ url('/discover') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Exe Dream Sequence </h4></a>
                             <div><span class="g-text">出品アイテム例です。</span></div>
@@ -210,10 +214,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-12 text-center">
-                    <a class="btn more-btn fadeInUp" data-wow-delay="0.6s" href="{{ url('/discover') }}">Load More</a>
+                <div class="col-12 col-lg-12 text-center" style="margin:auto;">
+                            {{$items->onEachSide(2)->links()}}
                 </div>
             </div>
+            
 
         </div>
-    </section>

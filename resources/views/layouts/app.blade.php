@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="jp">
+<!DOCTYPE html>
+<html lang="en">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
     <meta charset="UTF-8">
     <meta name="description" content="">
