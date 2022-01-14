@@ -214,12 +214,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg-12 text-center" style="margin:auto;">
-=======
-            
+                </div>            
                 <div class="col-12 col-lg-12 text-center">
->>>>>>> 212c9ec01d9da2173776af749c478bbb223fec6c
                             {{$items->onEachSide(2)->links()}}
                 </div>
             </div>
