@@ -5,6 +5,7 @@ use App\Item;
 use App\User;
 use App\Bid;
 use App\Purchaser;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
