@@ -214,8 +214,8 @@
             </div>
 
             
-                <div class="col-12 col-lg-12 text-center" style="margin:auto;">
-                            {{$items->links()}}
+                <div class="col-12 col-lg-12 text-center">
+                            {{$items->onEachSide(2)->links()}}
                 </div>
             </div>
             
