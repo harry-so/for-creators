@@ -65,8 +65,8 @@ Route::get('/purchaseedit/{bid}', [TransactionsController::class,'edit']);
 Route::post('/purchase/update', [TransactionsController::class,'update']);
 Route::get('/complete/{p_id}', [TransactionsController::class,'complete']);
 // 決済
-Route::get("/pay/{p_id}", [TransactionsController::class, 'payment']);
-Route::get("/success", [TransactionsController::class, 'success'])->name('success');
+Route::get("/pay/{p_id}", [StripeController::class, 'payment']);
+Route::get("/success", [StripeController::class, 'success'])->name('success');
 
 // ユーザーページ周り
 Route::get('/user/{user}', [UsersController::class,'index']);

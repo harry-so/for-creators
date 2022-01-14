@@ -11,7 +11,6 @@
             </div>
             <div class="row align-items-center">
                 @foreach($items as $item)
-                @if($item->status == 1)
                 <div class="col-lg-3 col-sm-6 col-xs-12 onsale">
                     <div class="pricing-item ">
                         <div class="wraper">
@@ -26,10 +25,9 @@
                                 @endif
                                 <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
                             </div>
-                                <div>
-                                    <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
-                                    <div><span class="g-text">{{$item->item_desc}}</span></div>
-                                </div>
+                            <div>
+                                <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
+                            </div>
                     <!-- 残り時間計算 -->
                         <?php
                         $enddate = strtotime($item->endtime);
@@ -60,105 +58,6 @@
                         </div>
                     </div>
                 </div>
-                @elseif($item->status == 6)
-                <div class="col-lg-3 col-sm-6 col-xs-12 sold">
-                    <div class="pricing-item ">
-                        <div class="wraper">
-                            <div class="pricing-img-wrapper">
-                            <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt="" class="pricing-img"></a>
-                            </div>
-                            <div class="owner-info">
-                                @if($item->user->prof_img)
-                                <img src="/users/{{$item->user->prof_img}}" alt="" class="prof_img" style="width:40px; height:40px;">
-                                @else
-                                <img src="{{ asset('img/authors/2.png') }}" alt="" class="prof_img" style="width:40px; height:40px;">
-                                @endif
-                                <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
-                            </div>
-                                <div>
-                                    <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
-                                    <div><span class="g-text">{{$item->item_desc}}</span></div>
-                                </div>
-                    <!-- 残り時間計算 -->
-                        <?php
-                        $enddate = strtotime($item->endtime);
-                        $startdate = strtotime('now');
-                        $diff = $enddate - $startdate;
-
-                        if (0 <= $diff && $diff < 60) {
-                            $timeleft = 'あと1分以内に終了';
-                        } elseif (61 <= $diff && $diff < 3600) {
-                            $timeleft = 'あと' . round($diff / 60) . '分';
-                        } elseif (3600 <= $diff && $diff < 24*3600) {
-                            $timeleft = 'あと' . round($diff / 3600) . '時間';
-                        } elseif (24*3600 <= $diff && $diff < 24*3600*7) {
-                            $timeleft= 'あと' . round($diff / (3600*24)) . '日';
-                        } elseif ($diff < 0) {
-                            $timeleft = '終了！';
-                        } else {
-                            $timeleft = "あと1週間以上";
-                        };
-                        
-                        ?> 
-                            
-                            <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>{{$timeleft}}</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>{{$item->bid->count()}} Bids</div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                @else
-                <div class="col-lg-3 col-sm-6 col-xs-12 unsold">
-                    <div class="pricing-item ">
-                        <div class="wraper">
-                            <div class="pricing-img-wrapper">
-                            <a href="{{ url('/item/'.$item->id) }}"><img src="/items/{{$item->img_1}}" alt="" class="pricing-img"></a>
-                            </div>
-                            <div class="owner-info">
-                                @if($item->user->prof_img)
-                                <img src="/users/{{$item->user->prof_img}}" alt="" class="prof_img" style="width:40px; height:40px;">
-                                @else
-                                <img src="{{ asset('img/authors/2.png') }}" alt="" class="prof_img" style="width:40px; height:40px;">
-                                @endif
-                                <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
-                            </div>
-                                <div>
-                                    <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
-                                    <div><span class="g-text">{{$item->item_desc}}</span></div>
-                                </div>
-                    <!-- 残り時間計算 -->
-                        <?php
-                        $enddate = strtotime($item->endtime);
-                        $startdate = strtotime('now');
-                        $diff = $enddate - $startdate;
-
-                        if (0 <= $diff && $diff < 60) {
-                            $timeleft = 'あと1分以内に終了';
-                        } elseif (61 <= $diff && $diff < 3600) {
-                            $timeleft = 'あと' . round($diff / 60) . '分';
-                        } elseif (3600 <= $diff && $diff < 24*3600) {
-                            $timeleft = 'あと' . round($diff / 3600) . '時間';
-                        } elseif (24*3600 <= $diff && $diff < 24*3600*7) {
-                            $timeleft= 'あと' . round($diff / (3600*24)) . '日';
-                        } elseif ($diff < 0) {
-                            $timeleft = '終了！';
-                        } else {
-                            $timeleft = "あと1週間以上";
-                        };
-                        
-                        ?> 
-                            
-                            <div class="admire">
-                                <div class="adm"><i class="fa fa-clock-o"></i>{{$timeleft}}</div>
-                                <div class="adm"><i class="fa fa-heart-o"></i>{{$item->bid->count()}} Bids</div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                @endif
                 @endforeach
             </div>
 
@@ -221,7 +120,7 @@
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
                         <div class="wraper">
-                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/4.png') }}" alt="" class="pricing-img"></a>
+                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/4.png') }}" alt=""></a>
                             
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/6.png') }}" width="40" alt="">

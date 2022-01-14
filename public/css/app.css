@@ -3927,10 +3927,24 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 }
 
 /* ##### 11.0 Price Table Area CSS ##### */
+
+@media (min-width:580px) {
+    .pricing-item {
+        border-radius: 10px;
+        background-color: #0a1026;
+        height:480px;
+        position: relative;
+        border: solid 1px rgba(255,255,255,0.25);
+        text-align: left;
+        padding: 10px 10px 20px;
+        margin: 0 0 30px;
+    }
+    
+}
+
 .pricing-item {
     border-radius: 10px;
     background-color: #0a1026;
-    height:496.73px;
     position: relative;
     border: solid 1px rgba(255,255,255,0.25);
     text-align: left;
@@ -4022,11 +4036,14 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 }
 
 .pricing-img {
-    width:248px;
-    height:248px;
     margin:auto;
     object-fit:cover;
-    
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .desc-wrapper {
@@ -4036,7 +4053,10 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 
 .pricing-img-wrapper {
     text-align:center;
-}
+    width:100%;
+    position:relative;
+    padding-top:100%;
+}  
 
 .single_price_table_content {
     padding: 50px;
@@ -6347,7 +6367,11 @@ body.light-version {
 }
 .collection_info .more-btn{margin-bottom: 5px}
 .service_single_content.collection-item h6{margin-bottom: 5px;margin-top: 5px}
-.admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;position:absolute;bottom:10px;left:10px;width:100%}
+@media (min-width:580px) {
+    .admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;position:absolute;bottom:10px;left:10px;width:100%}    
+}
+
+.admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;width:100%}
 .admire .adm{width: 100%;font-size: 14px;color: #d8d0d0;}
 .admire .adm i{color: #00e0c4;margin-right: 6px;}
 
