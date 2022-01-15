@@ -7,7 +7,7 @@
                             <span>Signup Now!</span>
                         </div>
                         <h2>Create New Account</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis accumsan nisi Ut ut felis congue nisl hendrerit commodo.</p>
+                        <p>Nameはあなたのユーザーネームになります。好きな名前をつけましょう！</p>
                     </div>
                 </div>
             </div>

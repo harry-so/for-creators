@@ -217,23 +217,22 @@ class TransactionsController extends Controller
         $chat = new Chats;
         $chat->purchaser_id = $request->purchaser_id;
         $chat->user_id = $request->user_id;
-    
         $chat->message = $request->message;
         $chat->save();
-
-        $user = User::where("id",$request->user_id)->first();
-        $item = Item::where("id",$request->item_id)->first();
-        // 購入ができたクリエイターへメール
-        $details = [
-            'user_name' => $user->name,
-            'item_name' => $item->item_name,
-            'message' => $request->message,
-        ];
         
-        Mail::to($item->user->email)->send(new ChatMail($details));
+        // $chats = Chats::where("purchaser_id",$request->purchaser_id)->get();
+        $purchaser = Purchaser::where("purchaser_id", $request->purchaser_id)->first();
+        $user = User::where("id",$request->user_id)->first();
+        // 購入ができたクリエイターへメール
+        // $details = [
+        //     'user_name' => $user->name,
+        //     'item_name' => $purchaser->item->item_name,
+        //     'message' => $request->message,
+        // ];
+        
+        // Mail::to($purchaser->user->email)->send(new ChatMail($details));
 
-        $chats = Chats::where("purchaser_id",$request->purchaser_id)->get();
-        $purchaser = Purchaser::where("item_id",$request->item_id)->where("purchaser_id",$request->user_id)->first();
+
 
         return redirect()->action([TransactionsController::class, 'show'], ['p_id' => $request->purchaser_id]);
     }
