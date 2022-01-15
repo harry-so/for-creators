@@ -71,7 +71,7 @@
                                             <input type="number" name="max_price" id="Price" required>
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
-                                            <label>Max price you can afford</label>
+                                            <label>Max price you can afford: あなたがこのアイテムに払える最大予算を入力ください</label>
                                         </div>
                                     </div>
                                     

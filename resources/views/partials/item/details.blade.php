@@ -95,7 +95,13 @@
                 <div class="highest-bid bid-item">
                 @foreach($bids as $bid)
                     <div class="author-item">
-                        <div class="author-img ml-0"><img src="/users/{{$bid->user->prof_img}}" width="40" alt=""></div>
+                        <div class="author-img ml-0">
+                        @if($bid->user->prof_img)
+                            <img src="/users/{{$bid->user->prof_img}}" class="prof_img" style="width:40px; height:40px;" alt="">
+                        @else
+                            <img src="{{ asset('img/authors/2.png') }}" class="prof_img" style="width:40px; height:40px;" alt="">
+                        @endif
+                        </div>
                         
                         <div class="author-info">
                             <p>by :<span class="w-text">{{$bid->user->name}}</span></p>
@@ -145,7 +151,7 @@
                         <div class="author-img ml-0"><img src="img/authors/1.png" width="40" alt=""></div>
                         <div class="author-info">
                             <p>Bid at: <span><i class="fa fa-clock-o mr-5p"></i></span><span class="w-text"> {{$your_bid -> bid_time}}</span></p>
-                            <p>Price:<span class="w-text mr-15"> {{$your_bid->max_price}} </span><span><i class="fa fa-clock-o mr-5p"></i>01:36 AM</span></p>
+                            <p>Price:<span class="w-text mr-15"> {{number_format($your_bid->max_price)}}円 </span><span><i class="fa fa-clock-o mr-5p"></i>01:36 AM</span></p>
                         </div>
                     </div>
                     @else

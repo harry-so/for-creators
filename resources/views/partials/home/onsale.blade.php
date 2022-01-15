@@ -35,7 +35,7 @@
                         $diff = $enddate - $startdate;
 
                         if (0 <= $diff && $diff < 60) {
-                            $timeleft = 'あと1分以内に終了';
+                            $timeleft = '1分以内に終了';
                         } elseif (61 <= $diff && $diff < 3600) {
                             $timeleft = 'あと' . round($diff / 60) . '分';
                         } elseif (3600 <= $diff && $diff < 24*3600) {
