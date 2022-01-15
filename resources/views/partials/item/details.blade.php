@@ -158,7 +158,7 @@
                     @endif
                 </div>
                 <div class="biding-end">
-                    <h4 class="mb-15">Biding Ends In :</h4>
+                    <h4 class="mb-15">Bidding Ends In :</h4>
                     <!-- Countdown  -->
                     <div class="count-down titled circled text-center">
                         

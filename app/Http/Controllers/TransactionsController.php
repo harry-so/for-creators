@@ -221,6 +221,17 @@ class TransactionsController extends Controller
         $chat->message = $request->message;
         $chat->save();
 
+        $user = User::where("id",$request->user_id)->first();
+        $item = Item::where("id",$request->item_id)->first();
+        // 購入ができたクリエイターへメール
+        $details = [
+            'user_name' => $user->name,
+            'item_name' => $item->item_name,
+            'message' => $request->message,
+        ];
+        
+        Mail::to($item->user->email)->send(new ChatMail($details));
+
         $chats = Chats::where("purchaser_id",$request->purchaser_id)->get();
         $purchaser = Purchaser::where("item_id",$request->item_id)->where("purchaser_id",$request->user_id)->first();
 

@@ -37,7 +37,6 @@
                             </div>
                                 <div>
                                     <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
-                                    <div><span class="g-text">{{$item->item_desc}}</span></div>
                                 </div>
                     <!-- 残り時間計算 -->
                         <?php
@@ -86,7 +85,6 @@
                             </div>
                                 <div>
                                     <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
-                                    <div><span class="g-text">{{$item->item_desc}}</span></div>
                                 </div>
                     <!-- 残り時間計算 -->
                         <?php
@@ -135,7 +133,6 @@
                             </div>
                                 <div>
                                     <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
-                                    <div><span class="g-text">{{$item->item_desc}}</span></div>
                                 </div>
                     <!-- 残り時間計算 -->
                         <?php

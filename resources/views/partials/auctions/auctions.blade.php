@@ -6,7 +6,7 @@
                 <div class="dream-dots justify-content-center fadeInUp" data-wow-delay="0.2s">
                      <span>Live auctions</span>
                 </div>
-                <h2 class="fadeInUp" data-wow-delay="0.3s">Biding Time!! <img src="img/art-work/fire.png" width="20" alt=""></h2>
+                <h2 class="fadeInUp" data-wow-delay="0.3s">Bidding Time!! <img src="img/art-work/fire.png" width="20" alt=""></h2>
                 <p class="fadeInUp" data-wow-delay="0.4s">残り時間はあとわずか。アイテムやクリエイターについて確認しましょう！</p>
             </div>
 

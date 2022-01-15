@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Item;
 use App\Purchaser;
+use App\Subscriber;
 use App\Bid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -51,6 +52,31 @@ class GeneralController extends Controller
 
         return redirect('contact-us');
 
+    }
+
+    public function newsletter(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+        if ($validator->fails()) {
+            return redirect('/')
+            ->withErrors($validator)
+            ->withInput();
+        }
+
+        if (Subscriber::where('email',$request->email)->exists()) {
+            return redirect('/');
+        } else {
+            $subscriber = new Subscriber;
+            $subscriber->email = $request->email;
+            $subscriber->user_id = $request->user_id;
+            $subscriber->save();
+            
+            return redirect('/');
+        }
+
+        
     }
 }
 

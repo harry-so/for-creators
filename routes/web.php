@@ -43,6 +43,7 @@ Route::get('/home', [GeneralController::class, 'index']);
 Route::get('/', [GeneralController::class, 'index']);
 Route::get('/contact-us',[GeneralController::class, 'contact'])->name("contact-us");
 Route::post('/inquiry',[GeneralController::class, 'inquiry']);
+Route::post('/newsletter',[GeneralController::class, 'newsletter']);
 
 
 // Route::get('/', 'ItemsController@index');
