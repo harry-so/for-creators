@@ -70,7 +70,7 @@
                                         </div>
                                         <div>
                                             <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
-                                            <div><span class="g-text"> {!! nl2br($item->item_desc) !!}</span></div>
+                                            <!-- <div><span class="g-text"> {!! nl2br($item->item_desc) !!}</span></div> -->
                                         </div>
 
                                             <?php

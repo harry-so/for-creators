@@ -180,7 +180,7 @@
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Scarecrow in daylight</h4></a>
-                            <div><span class="g-text">出品アイテム例です。</span></div>
+                            
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
@@ -198,7 +198,7 @@
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Darklight Angel 01</h4></a>
-                            <div><span class="g-text">出品アイテム例です。</span></div>
+
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
@@ -216,7 +216,7 @@
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Becoming one with Nature</h4></a>
-                            <div><span class="g-text">出品アイテム例です。</span></div>
+                            
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
@@ -227,14 +227,14 @@
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
                         <div class="wraper">
-                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/4.png') }}" alt="" class="pricing-img"></a>
+                            <a href="{{ url('/item-details') }}"><img src="{{ asset('img/art-work/4.png') }}" alt="" ></a>
                             
                             <div class="owner-info">
                                 <img src="{{ asset('img/authors/6.png') }}" width="40" alt="">
                                 <a href="{{ url('/profile') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Twilight Fracture City</h4></a>
-                            <div><span class="g-text">出品アイテム例です。</span></div>
+
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
@@ -254,7 +254,7 @@
                                 <a href="{{ url('/discover') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Resonate Sanctuary II</h4></a>
-                            <div><span class="g-text">出品アイテム例です。</span></div>
+
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
@@ -273,7 +273,7 @@
                                 <a href="{{ url('/discover') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Analogue refraction #3</h4></a>
-                            <div><span class="g-text">出品アイテム例です。</span></div>
+                            
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
@@ -292,7 +292,7 @@
                                 <a href="{{ url('/discover') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Super-Neumorphism #7</h4></a>
-                            <div><span class="g-text">出品アイテム例です。</span></div>
+                            
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
@@ -311,7 +311,7 @@
                                 <a href="{{ url('/discover') }}"><h3>@Smith Wright</h3></a>
                             </div>
                             <a href="{{ url('/item-details') }}"><h4>Exe Dream Sequence </h4></a>
-                            <div><span class="g-text">出品アイテム例です。</span></div>
+                            
                             <div class="admire">
                                 <div class="adm"><i class="fa fa-clock-o"></i>あと6時間</div>
                                 <div class="adm"><i class="fa fa-heart-o"></i>25 Bids </div>
