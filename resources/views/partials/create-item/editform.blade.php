@@ -47,6 +47,7 @@
                                         <div class="group-file">
                                             <p class="g-text">PNG, JPG, JPEG</p>
                                             <img id="uploaded" style="margin-bottom:10px">
+                                            <!-- <img src="/items/{{$item->img_1}}" style="margin-bottom:10px"> -->
                                             <label for="upload-btn" class="new_Btn more-btn" style="display:inline-block;">Upload File<br>
                                             <input type="file" name="img_1" id="upload-btn" class="form-control" accept='image/' enctype="multipart/form-data" multiple="multiple" autofocus>
                                             </label>

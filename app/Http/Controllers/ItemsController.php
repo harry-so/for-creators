@@ -196,9 +196,7 @@ class ItemsController extends Controller
         //バリデーション
         $validator = Validator::make($request->all(), [
             'item_name' => 'required|max:255',
-            'min_price' => 'required|max:100',
             'item_desc' => 'required|max:500',
-            // 'img_1' => 'required|file|image|max:2048',
         ]);
         //バリデーション:エラー 
         if ($validator->fails()) {
@@ -208,10 +206,11 @@ class ItemsController extends Controller
         }
         // Eloquent モデル
         $items = Item::find($request->id);
-        // 画像ファイル取得
-        $file = $request->img_1;
 
-        if ( !empty($file) ) {
+        if ( !empty($request->img_1) ) {
+
+            // 画像ファイル取得
+            $file = $request->img_1;
 
             // ファイルの拡張子取得
             $ext = $file->guessExtension();
@@ -229,12 +228,11 @@ class ItemsController extends Controller
             $file->move($target_path,$fileName);
         }
         $items->item_name = $request->item_name;
-        $items->min_price = $request->min_price;
-        $items->duration = $request->duration;
+        // $items->min_price = $request->min_price;
+        // $items->duration = $request->duration;
         $items->user_id = Auth::id();
         $items->item_desc = $request->item_desc;
         $items->save();
-
 
         //古いファイルを消す
         return redirect()->action([ItemsController::class, 'show'], ['item'=> $items]);
