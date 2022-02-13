@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row align-items-center">
 
-        @if($top_supporters)
+        @if($top_supporters[0])
             <div class="col-12 col-lg-12">
                 <div class="who-we-contant">
                     <div class="dream-dots text-left fadeInUp" data-wow-delay="0.2s" >
