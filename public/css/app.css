@@ -6382,7 +6382,7 @@ body.light-version {
 .collection_info .more-btn{margin-bottom: 5px}
 .service_single_content.collection-item h6{margin-bottom: 5px;margin-top: 5px}
 @media (min-width:580px) {
-    .admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;position:absolute;bottom:10px;left:10px;width:100%}    
+    .admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;position:absolute;bottom:10px;left:10px;width:90%}    
 }
 
 .admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;width:90%}
