@@ -23,12 +23,7 @@ class BidFactory extends Factory
 
     public function definition()
     {
-        $file = UploadedFile::fake()->image('profile.jpg', 500, 500);     
-        $ext = $file->guessExtension();
-        $fileName = Str::random(32).'.'.$ext;
-        $target_path = public_path('/users/');
-        //ファイルをpublic/uploadフォルダに移動
-        $file->move($target_path,$fileName);
+
         return [
 
             'message' =>$this->faker->sentence(15),
