@@ -35,9 +35,9 @@
                                 @endif
                                 <a href="{{ url('/user/'.$item->user_id) }}"><h3>{{$item->user->name}}</h3></a>
                             </div>
-                                <div>
-                                    <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
-                                </div>
+                            <div>
+                                <a href="{{ url('/item/'.$item->id) }}"><h4>{{$item->item_name}}</h4></a>
+                            </div>
                     <!-- 残り時間計算 -->
                         <?php
                         $enddate = strtotime($item->endtime);

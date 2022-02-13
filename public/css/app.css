@@ -6385,7 +6385,7 @@ body.light-version {
     .admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;position:absolute;bottom:10px;left:10px;width:100%}    
 }
 
-.admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;width:100%}
+.admire{display: flex;border-top: 1px dotted #565656;padding-top: 10px;width:90%}
 .admire .adm{width: 100%;font-size: 14px;color: #d8d0d0;}
 .admire .adm i{color: #00e0c4;margin-right: 6px;}
 

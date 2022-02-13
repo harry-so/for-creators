@@ -76,7 +76,7 @@
                                     </div>
                                     
                                     <div class="collection_info text-center">
-                                        <p class="w-text mr-5p">クレジットカードの登録をお願いしますが、募集期間が終わり、当選しない限りは決済はされません。 <img src="{{asset('img/art-work/fire.png')}}" width="20" alt=""></p>
+                                        <p class="w-text mr-5p">募集期間が終わり、当選しない限りは決済はされません。 <img src="{{asset('img/art-work/fire.png')}}" width="20" alt=""></p>
                                     </div>
                                     <input type="hidden" name="user_id" value="{{Auth::id()}}" />
                                     <input type="hidden" name="item_id" value="{{$item->id}}" /> 
