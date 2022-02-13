@@ -21,8 +21,7 @@
             <div class="row align-items-center">
                 @foreach($items as $item)
                 @if($item->status == 1)
-                <!-- <div class="col-lg-3 col-sm-6 col-xs-12 onsale"> -->
-                <div class="col-12 col-md-6 col-lg-4 onsale">
+                <div class="col-lg-3 col-sm-6 col-xs-12 onsale">
                     <div class="pricing-item ">
                         <div class="wraper">
                             <div class="pricing-img-wrapper">
@@ -70,8 +69,8 @@
                     </div>
                 </div>
                 @elseif($item->status == 6)
-                <!-- <div class="col-lg-3 col-sm-6 col-xs-12 sold"> -->
-                <div class="col-12 col-md-6 col-lg-4 sold">
+                <div class="col-lg-3 col-sm-6 col-xs-12 sold">
+                
                     <div class="pricing-item ">
                         <div class="wraper">
                             <div class="pricing-img-wrapper">
