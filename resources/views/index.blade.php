@@ -6,6 +6,6 @@
   <div class="clearfix"></div>
   @include('partials.home.onsale')
   @include('partials.home.collection')
-  
+
   
 @endsection

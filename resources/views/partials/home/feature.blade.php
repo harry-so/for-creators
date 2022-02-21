@@ -169,7 +169,7 @@
                 @endforeach
             </div>
 
-            <div class="row align-items-center">
+            <!-- <div class="row align-items-center">
 
                 <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="pricing-item ">
@@ -323,7 +323,7 @@
                 <div class="col-12 col-lg-12 text-center">
                             {{$items->onEachSide(2)->links()}}
                 </div>
-            </div>
+            </div> -->
             
 
         </div>
