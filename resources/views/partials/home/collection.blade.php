@@ -16,8 +16,8 @@
                   <!-- Content -->
                   <a href="{{ url('/item/'.$top_sellers[0]->item->id) }}" class="service_single_content collection-item wow fadeInUp" data-wow-delay="0.2s">
                       <!-- Icon -->
-                      <div class="collection_icon">
-                          <img src="/items/{{$top_sellers[0]->item->img_1}}" alt="">
+                      <div class="pricing-img-wrapper">
+                          <img src="/items/{{$top_sellers[0]->item->img_1}}" alt="" class="pricing-img" >
                       </div>
                       <div class="collection_info">
                           <h6>{{$top_sellers[0]->item->item_name}}</h6>
@@ -30,8 +30,8 @@
                   <!-- Content -->
                   <a href="{{ url('/item/'.$top_sellers[1]->item->id) }}" class="service_single_content collection-item wow fadeInUp" data-wow-delay="0.2s">
                       <!-- Icon -->
-                      <div class="collection_icon">
-                          <img src="/items/{{$top_sellers[1]->item->img_1}}" alt="">
+                      <div class="pricing-img-wrapper">
+                          <img src="/items/{{$top_sellers[1]->item->img_1}}" alt="" class="pricing-img">
                       </div>
                       <div class="collection_info">
                           <h6>{{$top_sellers[1]->item->item_name}}</h6>
@@ -44,8 +44,8 @@
                   <!-- Content -->
                   <a href="{{ url('/item/'.$top_sellers[2]->item->id) }}" class="service_single_content collection-item wow fadeInUp" data-wow-delay="0.2s">
                       <!-- Icon -->
-                      <div class="collection_icon">
-                          <img src="/items/{{$top_sellers[2]->item->img_1}}" alt="">
+                      <div class="pricing-img-wrapper">
+                          <img src="/items/{{$top_sellers[2]->item->img_1}}" alt="" class="pricing-img">
                       </div>
                       <div class="collection_info">
                           <h6>{{$top_sellers[2]->item->item_name}}</h6>
@@ -58,8 +58,8 @@
                   <!-- Content -->
                   <a href="{{ url('/item/'.$top_sellers[3]->item->id) }}" class="service_single_content collection-item wow fadeInUp" data-wow-delay="0.2s">
                       <!-- Icon -->
-                      <div class="collection_icon">
-                          <img src="/items/{{$top_sellers[3]->item->img_1}}" alt="">
+                      <div class="pricing-img-wrapper">
+                          <img src="/items/{{$top_sellers[3]->item->img_1}}" alt="" class="pricing-img">
                       </div>
                       <div class="collection_info">
                           <h6>{{$top_sellers[3]->item->item_name}}</h6>
