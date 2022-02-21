@@ -4,6 +4,7 @@
 
   @include('partials.home.hero')
   <div class="clearfix"></div>
-  @include('partials.home.onsale')
+  @include('partials.home.feature')
+  
   
 @endsection
