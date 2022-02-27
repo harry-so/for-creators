@@ -44,9 +44,9 @@
                         <a class="dropdown-item" href="{{ url('/signup') }}">Sign Up</a>
                     </div>
                 </li> -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ url('/contact-us') }}">Contact</a>
-                </li>
+                </li> -->
 
                 @if (Route::has('login'))
                 @auth
